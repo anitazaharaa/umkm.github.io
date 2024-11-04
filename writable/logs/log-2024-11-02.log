@@ -1,0 +1,505 @@
+CRITICAL - 2024-11-02 00:24:31 --> Error: Call to undefined method CodeIgniter\View\View::extends()
+[Method: GET, Route: /]
+in APPPATH\Views\home\login.php on line 1.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('home/login', [], true)
+ 4 APPPATH\Controllers\Home.php(12): view('home/login')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+CRITICAL - 2024-11-02 00:32:22 --> ErrorException: Undefined variable $title
+[Method: GET, Route: register]
+in APPPATH\Views\layout\template_home.php on line 10.
+ 1 APPPATH\Views\layout\template_home.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'C:\\xampp\\htdocs\\siumkm\\app\\Views\\layout\\template_home.php', 10)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\siumkm\\app\\Views\\layout\\template_home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('layout/template_home', [], true)
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('home/register', [], true)
+ 6 APPPATH\Controllers\Home.php(22): view('home/register')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->register()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+CRITICAL - 2024-11-02 00:48:13 --> ErrorException: Cannot declare class App\Models\HomeModel, because the name is already in use
+[Method: GET, Route: register]
+in APPPATH\Models\KategoriModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-02 00:48:28 --> ErrorException: Cannot declare class App\Models\HomeModel, because the name is already in use
+[Method: GET, Route: register]
+in APPPATH\Models\KategoriModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-02 00:49:50 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: register]
+in APPPATH\Views\home\register.php on line 41.
+ 1 APPPATH\Views\home\register.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\siumkm\\app\\Views\\home\\register.php', 41)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\siumkm\\app\\Views\\home\\register.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('home/register', [], true)
+ 5 APPPATH\Controllers\Home.php(28): view('home/register', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->register()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+CRITICAL - 2024-11-02 07:04:04 --> Error: Class "App\Controllers\PenggunaModel" not found
+[Method: POST, Route: home/simpan]
+in APPPATH\Controllers\Home.php on line 32.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+CRITICAL - 2024-11-02 07:05:31 --> Error: Class "App\Controllers\PenggunaModel" not found
+[Method: POST, Route: home/simpan]
+in APPPATH\Controllers\Home.php on line 32.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+CRITICAL - 2024-11-02 07:06:07 --> Error: Class "App\Controllers\UmkmModel" not found
+[Method: POST, Route: home/simpan]
+in APPPATH\Controllers\Home.php on line 33.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+CRITICAL - 2024-11-02 07:07:22 --> Error: Class "App\Controllers\PenggunaModel" not found
+[Method: POST, Route: home/simpan]
+in APPPATH\Controllers\Home.php on line 33.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+CRITICAL - 2024-11-02 07:07:38 --> ErrorException: Undefined property: App\Controllers\Home::$penggunaModel
+[Method: POST, Route: home/simpan]
+in APPPATH\Controllers\Home.php on line 38.
+ 1 APPPATH\Controllers\Home.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$penggunaModel', 'C:\\xampp\\htdocs\\siumkm\\app\\Controllers\\Home.php', 38)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+ERROR - 2024-11-02 07:08:00 --> mysqli_sql_exception: Unknown column 'nama' in 'field list' in C:\xampp\htdocs\siumkm\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\siumkm\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\siumkm\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\siumkm\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\siumkm\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\siumkm\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\siumkm\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\siumkm\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\siumkm\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\siumkm\app\Controllers\Home.php(42): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\siumkm\system\CodeIgniter.php(933): App\Controllers\Home->simpan()
+#10 C:\xampp\htdocs\siumkm\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#11 C:\xampp\htdocs\siumkm\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\siumkm\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\siumkm\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\siumkm\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\siumkm\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2024-11-02 07:08:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nama' in 'field list'
+[Method: POST, Route: home/simpan]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_pengguna` (`nama`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES (:nama:, :email:, :password:, :role:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Home.php(42): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+CRITICAL - 2024-11-02 07:08:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_pengguna` (`nama`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES (NULL, \'tes@g.com\', \'$2y$10$cy7lWgf6u0kErEFf028amexEgBfPKCZltEVt/4CQdX0EZZ9m74qgW\', \'umkm\', \'2024-11-02 07:08:00\', \'2024-11-02 07:08:00\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_pengguna` (`nama`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES (NULL, \'tes@g.com\', \'$2y$10$cy7lWgf6u0kErEFf028amexEgBfPKCZltEVt/4CQdX0EZZ9m74qgW\', \'umkm\', \'2024-11-02 07:08:00\', \'2024-11-02 07:08:00\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_pengguna` (`nama`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES (:nama:, :email:, :password:, :role:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\Home.php(42): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+CRITICAL - 2024-11-02 07:08:00 --> [Caused by] mysqli_sql_exception: Unknown column 'nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tbl_pengguna` (`nama`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES (NULL, \'tes@g.com\', \'$2y$10$cy7lWgf6u0kErEFf028amexEgBfPKCZltEVt/4CQdX0EZZ9m74qgW\', \'umkm\', \'2024-11-02 07:08:00\', \'2024-11-02 07:08:00\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_pengguna` (`nama`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES (NULL, \'tes@g.com\', \'$2y$10$cy7lWgf6u0kErEFf028amexEgBfPKCZltEVt/4CQdX0EZZ9m74qgW\', \'umkm\', \'2024-11-02 07:08:00\', \'2024-11-02 07:08:00\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_pengguna` (`nama`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES (NULL, \'tes@g.com\', \'$2y$10$cy7lWgf6u0kErEFf028amexEgBfPKCZltEVt/4CQdX0EZZ9m74qgW\', \'umkm\', \'2024-11-02 07:08:00\', \'2024-11-02 07:08:00\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_pengguna` (`nama`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES (:nama:, :email:, :password:, :role:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Home.php(42): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+ERROR - 2024-11-02 07:11:04 --> mysqli_sql_exception: Unknown column 'email' in 'field list' in C:\xampp\htdocs\siumkm\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\siumkm\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\siumkm\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\siumkm\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\siumkm\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\siumkm\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\siumkm\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\siumkm\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\siumkm\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\siumkm\app\Controllers\Home.php(42): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\siumkm\system\CodeIgniter.php(933): App\Controllers\Home->simpan()
+#10 C:\xampp\htdocs\siumkm\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#11 C:\xampp\htdocs\siumkm\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\siumkm\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\siumkm\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\siumkm\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\siumkm\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2024-11-02 07:11:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'email' in 'field list'
+[Method: POST, Route: home/simpan]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (:email:, :password:, :role:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Home.php(42): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+CRITICAL - 2024-11-02 07:11:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'email' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (\'tes@g.com\', \'$2y$10$kr.8xO.8p0ORBmksNa/JQeb6kUnZ1LQbzvVjPEKzjvm8UPKYOItVO\', \'umkm\', \'2024-11-02 07:11:04\', \'2024-11-02 07:11:04\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (\'tes@g.com\', \'$2y$10$kr.8xO.8p0ORBmksNa/JQeb6kUnZ1LQbzvVjPEKzjvm8UPKYOItVO\', \'umkm\', \'2024-11-02 07:11:04\', \'2024-11-02 07:11:04\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (:email:, :password:, :role:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\Home.php(42): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+CRITICAL - 2024-11-02 07:11:04 --> [Caused by] mysqli_sql_exception: Unknown column 'email' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (\'tes@g.com\', \'$2y$10$kr.8xO.8p0ORBmksNa/JQeb6kUnZ1LQbzvVjPEKzjvm8UPKYOItVO\', \'umkm\', \'2024-11-02 07:11:04\', \'2024-11-02 07:11:04\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (\'tes@g.com\', \'$2y$10$kr.8xO.8p0ORBmksNa/JQeb6kUnZ1LQbzvVjPEKzjvm8UPKYOItVO\', \'umkm\', \'2024-11-02 07:11:04\', \'2024-11-02 07:11:04\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (\'tes@g.com\', \'$2y$10$kr.8xO.8p0ORBmksNa/JQeb6kUnZ1LQbzvVjPEKzjvm8UPKYOItVO\', \'umkm\', \'2024-11-02 07:11:04\', \'2024-11-02 07:11:04\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (:email:, :password:, :role:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Home.php(42): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+ERROR - 2024-11-02 07:13:36 --> mysqli_sql_exception: Unknown column 'email' in 'field list' in C:\xampp\htdocs\siumkm\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\siumkm\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\siumkm\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\siumkm\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\siumkm\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\siumkm\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\siumkm\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\siumkm\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\siumkm\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\siumkm\app\Controllers\Home.php(42): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\siumkm\system\CodeIgniter.php(933): App\Controllers\Home->simpan()
+#10 C:\xampp\htdocs\siumkm\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#11 C:\xampp\htdocs\siumkm\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\siumkm\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\siumkm\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\siumkm\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\siumkm\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2024-11-02 07:13:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'email' in 'field list'
+[Method: POST, Route: home/simpan]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (:email:, :password:, :role:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Home.php(42): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+CRITICAL - 2024-11-02 07:13:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'email' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (\'tes@g.com\', \'$2y$10$c8d5IapIQPgNzPsH50NCVuffmTwXdveGUwYoXQcVoLHIWfOhxjG96\', \'umkm\', \'2024-11-02 07:13:36\', \'2024-11-02 07:13:36\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (\'tes@g.com\', \'$2y$10$c8d5IapIQPgNzPsH50NCVuffmTwXdveGUwYoXQcVoLHIWfOhxjG96\', \'umkm\', \'2024-11-02 07:13:36\', \'2024-11-02 07:13:36\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (:email:, :password:, :role:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\Home.php(42): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+CRITICAL - 2024-11-02 07:13:36 --> [Caused by] mysqli_sql_exception: Unknown column 'email' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (\'tes@g.com\', \'$2y$10$c8d5IapIQPgNzPsH50NCVuffmTwXdveGUwYoXQcVoLHIWfOhxjG96\', \'umkm\', \'2024-11-02 07:13:36\', \'2024-11-02 07:13:36\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (\'tes@g.com\', \'$2y$10$c8d5IapIQPgNzPsH50NCVuffmTwXdveGUwYoXQcVoLHIWfOhxjG96\', \'umkm\', \'2024-11-02 07:13:36\', \'2024-11-02 07:13:36\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (\'tes@g.com\', \'$2y$10$c8d5IapIQPgNzPsH50NCVuffmTwXdveGUwYoXQcVoLHIWfOhxjG96\', \'umkm\', \'2024-11-02 07:13:36\', \'2024-11-02 07:13:36\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_pengguna` (`email`, `password`, `role`, `created_at`, `updated_at`) VALUES (:email:, :password:, :role:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Home.php(42): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->simpan()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+INFO - 2024-11-02 07:21:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:21:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:22:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:26:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:27:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:30:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:30:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:31:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:31:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:33:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:36:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:37:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:37:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:37:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:40:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:40:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:40:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:41:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:41:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:41:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:41:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:44:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:44:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:44:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:45:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:45:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:45:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:45:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:46:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:46:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 07:46:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 12:58:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-02 13:19:10 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: admin/kategori]
+in APPPATH\Views\admin\kategori.php on line 35.
+ 1 APPPATH\Views\admin\kategori.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\siumkm\\app\\Views\\admin\\kategori.php', 35)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\siumkm\\app\\Views\\admin\\kategori.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/kategori', [], true)
+ 5 APPPATH\Controllers\Kategori.php(18): view('admin/kategori', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Kategori->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kategori))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+INFO - 2024-11-02 15:49:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 15:49:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 15:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 15:49:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 15:49:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 15:49:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 15:49:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 15:50:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 15:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:24:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-02 16:24:57 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: admin/kategori]
+in APPPATH\Views\admin\kategori.php on line 55.
+ 1 APPPATH\Views\admin\kategori.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\siumkm\\app\\Views\\admin\\kategori.php', 55)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\siumkm\\app\\Views\\admin\\kategori.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/kategori', [], true)
+ 5 APPPATH\Controllers\Kategori.php(19): view('admin/kategori', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Kategori->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kategori))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+INFO - 2024-11-02 16:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:26:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:26:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:27:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:27:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:27:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:30:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:31:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:40:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:40:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:40:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:40:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:40:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:41:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:41:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:41:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:41:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:41:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:41:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:42:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:43:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:43:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:43:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:44:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:44:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:44:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:44:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:44:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:44:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:57:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 16:57:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-02 16:57:27 --> ErrorException: Undefined variable $kategori
+[Method: GET, Route: admin/umkm]
+in APPPATH\Views\admin\umkm.php on line 30.
+ 1 APPPATH\Views\admin\umkm.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kategori', 'C:\\xampp\\htdocs\\siumkm\\app\\Views\\admin\\umkm.php', 30)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\siumkm\\app\\Views\\admin\\umkm.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/admin/umkm', [], true)
+ 5 APPPATH\Controllers\Umkm.php(18): view('/admin/umkm', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Umkm->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Umkm))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+INFO - 2024-11-02 16:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-02 16:58:25 --> ErrorException: Undefined variable $index
+[Method: GET, Route: admin/umkm]
+in APPPATH\Views\admin\umkm.php on line 35.
+ 1 APPPATH\Views\admin\umkm.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $index', 'C:\\xampp\\htdocs\\siumkm\\app\\Views\\admin\\umkm.php', 35)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\siumkm\\app\\Views\\admin\\umkm.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/admin/umkm', [], true)
+ 5 APPPATH\Controllers\Umkm.php(18): view('/admin/umkm', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Umkm->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Umkm))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+INFO - 2024-11-02 16:58:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 17:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 17:00:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 17:00:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 17:00:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 17:02:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-02 17:02:06 --> ErrorException: Undefined variable $kategori
+[Method: GET, Route: admin/umkm]
+in APPPATH\Views\admin\umkm.php on line 34.
+ 1 APPPATH\Views\admin\umkm.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kategori', 'C:\\xampp\\htdocs\\siumkm\\app\\Views\\admin\\umkm.php', 34)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\siumkm\\app\\Views\\admin\\umkm.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/admin/umkm', [], true)
+ 5 APPPATH\Controllers\Umkm.php(18): view('/admin/umkm', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Umkm->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Umkm))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\siumkm\\public\\index.php')
+INFO - 2024-11-02 17:02:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 17:02:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 17:04:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 17:06:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 17:06:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 17:06:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 17:08:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 17:08:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-02 17:09:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
