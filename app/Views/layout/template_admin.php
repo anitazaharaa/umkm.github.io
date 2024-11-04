@@ -74,7 +74,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?= ($navtitle == 'User Management') ? 'active' : '' ?>" href="../pages/rtl.html">
+          <a class="nav-link <?= ($navtitle == 'User Management') ? 'active' : '' ?>" href="/admin/user">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-world-2 text-dark text-sm opacity-10"></i>
             </div>

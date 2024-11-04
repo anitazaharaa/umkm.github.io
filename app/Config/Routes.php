@@ -27,3 +27,5 @@ $routes->get('/admin/umkm/hapus/(:num)/(:any)', 'Umkm::hapus/$1/$2');
 $routes->get('/admin/produk', 'Produk::index');
 $routes->get('/admin/produk/detail/(:num)', 'Produk::detail/$1');
 $routes->get('/admin/produk/hapus/(:num)', 'Produk::hapus/$1');
+
+$routes->get('/admin/user', 'User::index');

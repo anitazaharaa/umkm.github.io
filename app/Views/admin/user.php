@@ -6,7 +6,7 @@
         <div class="col-md-12">
           <div class="card mb-">
             <div class="card-header pb-0">
-              <h6>Data Kategori</h6>
+              <h6>User Management</h6>
             </div>
 
               <?php if (session()->getFlashdata('success')): ?>
@@ -16,7 +16,7 @@
               <?php endif; ?>
 
             <a href="/admin/kategori/tambah">
-              <button class="btn btn-success btn-sm col-md-2 mx-4 mt-2">Tambah Kategori</button>
+              <button class="btn btn-success btn-sm col-md-2 mx-4 mt-2">Tambah Pengguna</button>
             </a>
             
 
@@ -26,12 +26,14 @@
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama Kategori</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Username</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Role</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"></th>
                       <th class="text-secondary opacity-4"></th>
                     </tr>
                   </thead>
                   <tbody>
-                   <?php foreach ($kategori as $index => $item): ?>
+                   <?php foreach ($user as $index => $item): ?>
                             <tr>
                                 <td>
                                     <div class="d-flex px-2 py-1">
@@ -43,15 +45,22 @@
                                 <td>
                                     <div class="d-flex px-2 py-1">
                                         <div class="d-flex flex-column justify-content-center">
-                                            <h4 class="mb-0 text-sm"><?= $item['nama_kategori'] ?></h4>
+                                            <h4 class="mb-0 text-sm"><?= $item['username'] ?></h4>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex px-2 py-1">
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h4 class="mb-0 text-sm"><?= $item['role'] ?></h4>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="align-middle mb-0">
-                                    <a href="/admin/kategori/ubah/<?= $item['id_kategori']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="/admin/kategori/ubah/<?= $item['id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         <button class="btn btn-primary btn-sm" style="margin: 0;">Edit</button>
                                     </a>
-                                    <a href="/admin/kategori/hapus/<?= $item['id_kategori']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
+                                    <a href="/admin/kategori/hapus/<?= $item['id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
                                         <button class="btn btn-danger btn-sm" style="margin: 0;">Hapus</button>
                                     </a>
                                 </td>
