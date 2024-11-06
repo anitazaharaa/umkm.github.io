@@ -9,7 +9,7 @@
         protected $table = 'tbl_pengguna';
         protected $primaryKey = 'id';
         protected $useTimestamps = true;
-        protected $allowedFields = ['username', 'email', 'password', 'role'];
+        protected $allowedFields = ['nama_pengguna', 'username', 'email', 'password', 'role'];
 
     }
 

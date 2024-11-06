@@ -31,6 +31,7 @@ class Home extends BaseController
         $umkmModel = new UmkmModel();
 
         $penggunaModel->save([
+            'nama_pengguna' => $this->request->getVar('nama_pemilik'),
             'username' => $this->request->getVar('username'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
             'role' => 'pelaku_umkm'

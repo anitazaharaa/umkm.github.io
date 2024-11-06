@@ -29,3 +29,8 @@ $routes->get('/admin/produk/detail/(:num)', 'Produk::detail/$1');
 $routes->get('/admin/produk/hapus/(:num)', 'Produk::hapus/$1');
 
 $routes->get('/admin/user', 'User::index');
+$routes->get('/admin/user/tambah', 'User::tambah');
+$routes->post('/admin/user/simpan', 'User::simpan');
+$routes->get('/admin/user/ubah/(:num)', 'User::ubah/$1');
+$routes->post('/admin/user/update', 'User::update');
+$routes->get('/admin/user/hapus/(:num)', 'User::hapus/$1');

@@ -15,7 +15,7 @@
                  </div>
               <?php endif; ?>
 
-            <a href="/admin/kategori/tambah">
+            <a href="/admin/user/tambah">
               <button class="btn btn-success btn-sm col-md-2 mx-4 mt-2">Tambah Pengguna</button>
             </a>
             
@@ -26,6 +26,7 @@
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Username</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Role</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"></th>
@@ -45,6 +46,13 @@
                                 <td>
                                     <div class="d-flex px-2 py-1">
                                         <div class="d-flex flex-column justify-content-center">
+                                            <h4 class="mb-0 text-sm"><?= $item['nama_pengguna'] ?></h4>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex px-2 py-1">
+                                        <div class="d-flex flex-column justify-content-center">
                                             <h4 class="mb-0 text-sm"><?= $item['username'] ?></h4>
                                         </div>
                                     </div>
@@ -57,10 +65,10 @@
                                     </div>
                                 </td>
                                 <td class="align-middle mb-0">
-                                    <a href="/admin/kategori/ubah/<?= $item['id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="/admin/user/ubah/<?= $item['id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         <button class="btn btn-primary btn-sm" style="margin: 0;">Edit</button>
                                     </a>
-                                    <a href="/admin/kategori/hapus/<?= $item['id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
+                                    <a href="/admin/user/hapus/<?= $item['id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
                                         <button class="btn btn-danger btn-sm" style="margin: 0;">Hapus</button>
                                     </a>
                                 </td>
