@@ -233,8 +233,7 @@
       </div>
 
   <?= $this->endSection() ?>
-  
-  
+
   <?= $this->section('chart') ?>
   <script>
     var ctx1 = document.getElementById("chart-line").getContext("2d");
@@ -267,7 +266,6 @@
             <?php endforeach; ?>
           ],
           maxBarThickness: 6
-
         }],
       },
       options: {
@@ -326,7 +324,7 @@
         },
       },
     });
-  </script>
+    </script>
     <?= $this->endSection() ?>
 
     <!-- "Bantarkalong", "Bojongasih", "Bojonggambir", "Ciawi", "Cibalong", "Cigalontang", "Cikalong", "Cikatomas", "Cineam", "Cipatujah", "Cisayong", "Culamega", "Gunungtanjung", "Jamanis", "Jatiwaras", "Kadipaten", "Karang Jaya", "Karangnunggal", "Leuwisari", "Mangunreja", "Manonjaya", "Padakembang", "Pagerageung", "Pancatengah", "Parungponteng", "Puspahiang", "Rajapolah", "Salawu", "Salopa", "Sariwangi", "Singaparna", "Sodonghilir", "Sukahening", "Sukaraja", "Sukarame", "Sukaratu", "Sukaresik", "Tanjungjaya", "Taraju", -->

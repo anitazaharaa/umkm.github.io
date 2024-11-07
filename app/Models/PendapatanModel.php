@@ -8,8 +8,7 @@
     {
         protected $table = 'tbl_pendapatan';
         protected $primaryKey = 'id_pendapatan';
-        protected $useTimestamps = true;
-        protected $allowedFields = ['nama_kecamatan', 'jumlah_pendapatan', 'periode'];
+        protected $allowedFields = ['id_laporan','nama_kecamatan', 'jumlah_pendapatan', 'periode'];
 
         public function getPendapatanByMonthYear($month, $year)
         {

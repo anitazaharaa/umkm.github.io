@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Nov 2024 pada 15.41
+-- Waktu pembuatan: 07 Nov 2024 pada 17.06
 -- Versi server: 10.4.25-MariaDB
 -- Versi PHP: 8.1.10
 
@@ -47,11 +47,39 @@ INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tbl_laporan`
+--
+
+CREATE TABLE `tbl_laporan` (
+  `id_laporan` varchar(64) NOT NULL,
+  `nama_laporan` varchar(128) NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_pendapatan`
+--
+
+CREATE TABLE `tbl_pendapatan` (
+  `id_pendapatan` int(11) NOT NULL,
+  `id_laporan` varchar(64) NOT NULL,
+  `nama_kecamatan` varchar(128) NOT NULL,
+  `jumlah_pendapatan` int(11) NOT NULL,
+  `periode` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tbl_pengguna`
 --
 
 CREATE TABLE `tbl_pengguna` (
   `id` int(11) NOT NULL,
+  `nama_pengguna` varchar(128) NOT NULL,
   `username` varchar(128) NOT NULL,
   `password` varchar(128) NOT NULL,
   `role` enum('administrator','petugas','pelaku_umkm') NOT NULL,
@@ -63,9 +91,9 @@ CREATE TABLE `tbl_pengguna` (
 -- Dumping data untuk tabel `tbl_pengguna`
 --
 
-INSERT INTO `tbl_pengguna` (`id`, `username`, `password`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'admin', '$2a$12$3Kl7vvCLLXJPM9mEgVeWsOcMECRSQjuoTOJsRuJH3Hjhx8EFX0f.q', 'administrator', '0000-00-00', '0000-00-00'),
-(5, 'user', '$2y$10$1rPddUrcmeLMRLYccsNyW.3xTWlxu.QvkUvfOJmzaJQ9gatqz2fc6', 'pelaku_umkm', '2024-11-02', '2024-11-02');
+INSERT INTO `tbl_pengguna` (`id`, `nama_pengguna`, `username`, `password`, `role`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'admin', '$2a$12$3Kl7vvCLLXJPM9mEgVeWsOcMECRSQjuoTOJsRuJH3Hjhx8EFX0f.q', 'administrator', '0000-00-00', '0000-00-00'),
+(5, 'user', 'user', '$2y$10$1rPddUrcmeLMRLYccsNyW.3xTWlxu.QvkUvfOJmzaJQ9gatqz2fc6', 'pelaku_umkm', '2024-11-02', '2024-11-02');
 
 -- --------------------------------------------------------
 
@@ -128,6 +156,19 @@ ALTER TABLE `tbl_kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
+-- Indeks untuk tabel `tbl_laporan`
+--
+ALTER TABLE `tbl_laporan`
+  ADD PRIMARY KEY (`id_laporan`);
+
+--
+-- Indeks untuk tabel `tbl_pendapatan`
+--
+ALTER TABLE `tbl_pendapatan`
+  ADD PRIMARY KEY (`id_pendapatan`),
+  ADD KEY `id_laporan` (`id_laporan`);
+
+--
 -- Indeks untuk tabel `tbl_pengguna`
 --
 ALTER TABLE `tbl_pengguna`
@@ -156,6 +197,12 @@ ALTER TABLE `tbl_umkm`
 --
 ALTER TABLE `tbl_kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_pendapatan`
+--
+ALTER TABLE `tbl_pendapatan`
+  MODIFY `id_pendapatan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_pengguna`

@@ -37,3 +37,4 @@ $routes->get('/admin/user/hapus/(:num)', 'User::hapus/$1');
 
 $routes->get('/admin/laporan', 'Laporan::index');
 $routes->get('/admin/laporan/tambahpendapatan', 'Laporan::tambah');
+$routes->post('/admin/laporan/simpan', 'Laporan::simpan');
