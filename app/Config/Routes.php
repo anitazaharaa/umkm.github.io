@@ -34,3 +34,6 @@ $routes->post('/admin/user/simpan', 'User::simpan');
 $routes->get('/admin/user/ubah/(:num)', 'User::ubah/$1');
 $routes->post('/admin/user/update', 'User::update');
 $routes->get('/admin/user/hapus/(:num)', 'User::hapus/$1');
+
+$routes->get('/admin/laporan', 'Laporan::index');
+$routes->get('/admin/laporan/tambahpendapatan', 'Laporan::tambah');
