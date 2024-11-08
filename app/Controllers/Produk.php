@@ -18,6 +18,18 @@ class Produk extends BaseController
         return view('/admin/produk', $data);
     }
 
+    public function kategori($id_kategori)
+    {
+
+        $data = [
+            'title' => 'Produk UMKM | SiUMKM',
+            'navtitle' => 'Produk UMKM',
+            'produk' => $this->produkModel->getProdukByKategori($id_kategori),
+        ];
+
+        return view('/admin/produk', $data);
+    }
+
     public function detail($id_produk)
     {
         $produkModel = new ProdukModel();

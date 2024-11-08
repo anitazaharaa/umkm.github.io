@@ -56,6 +56,7 @@ abstract class BaseController extends Controller
         // E.g.: $this->session = \Config\Services::session();
 
         $this->homeModel = new \App\Models\HomeModel();
+        $this->kategoriModel = new \App\Models\KategoriModel();
         $this->PenggunaModel = new \App\Models\PenggunaModel();
         $this->umkmModel = new \App\Models\UmkmModel();
         $this->produkModel = new \App\Models\ProdukModel();

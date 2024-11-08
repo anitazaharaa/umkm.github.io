@@ -11,6 +11,10 @@
         protected $useTimestamps = true;
         protected $allowedFields = ['nama_pemilik', 'NIK', 'email','no_hp','id_kategori','alamat_umkm', 'status', 'username'];
 
+        public function getTotalUmkmByStatus($status)
+        {
+            return $this->where('status', $status)->countAllResults();
+        }
     }
 
 ?>

@@ -12,7 +12,7 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold mb-2">UMKM Yang Terverifikasi</p>
                     <h5 class="font-weight-bolder">
-                      150
+                    <?= $umkm['verif'] ?>
                     </h5>
                   </div>
                 </div>
@@ -33,7 +33,7 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold mb-2">UMKM Yang Belum Terverifikasi</p>
                     <h5 class="font-weight-bolder">
-                      5
+                    <?= $umkm['nonverif'] ?>
                     </h5>
                   </div>
                 </div>
@@ -54,7 +54,7 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold mb-2">UMKM Yang Terdaftar</p>
                     <h5 class="font-weight-bolder">
-                      155
+                    <?= $umkm['total'] ?>
                     </h5>
                   </div>
                 </div>
@@ -75,7 +75,7 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold mb-2">Produk</p>
                     <h5 class="font-weight-bolder">
-                      351
+                      <?= $total_produk ?>
                     </h5>
                   </div>
                 </div>
@@ -95,7 +95,7 @@
           <div class="card z-index-2">
             <div class="card-header pb-0 pt-3 bg-transparent">
               <h6 class="text-capitalize">Pendapatan UMKM Kabupaten Tasikmalaya</h6>
-              <form action="post">
+              <form method="post" action="/admin">
               <div class="row">
                 <div class="col-2">
                 <select class="form-control" name="month" id="month">
@@ -142,89 +142,26 @@
                 </div>
                 <div class="card-body p-3">
               <ul class="list-group">
+
+                <?php foreach($kategori as $k) : ?>
                 <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                   <div class="d-flex align-items-center">
                     <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
                       <i class="ni ni-box-2 text-white opacity-10"></i>
                     </div>
                     <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Produk</h6>
-                      <span class="text-xs">31</span>
+                      <h6 class="mb-1 text-dark text-sm"><?= $k['nama_kategori'] ?></h6>
+                      <span class="text-xs"><?= $k['total_produk'] ?></span>
                     </div>
                   </div>
                   <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                    <a href="/admin/produk/<?= $k['id_kategori'] ?>">
+                      <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                    </a>
+                    
                   </div>
                 </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                  <div class="d-flex align-items-center">
-                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                      <i class="ni ni-glasses-2 text-white opacity-10"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Fashion</h6>
-                      <span class="text-xs">51</span>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                  <div class="d-flex align-items-center">
-                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                      <i class="ni ni-satisfied text-white opacity-10"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Makanan</h6>
-                      <span class="text-xs">14</span>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-                  <div class="d-flex align-items-center">
-                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                      <i class="ni ni-mobile-button text-white opacity-10"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Teknologi</h6>
-                      <span class="text-xs font-weight-bold">42</span>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-                  <div class="d-flex align-items-center">
-                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                      <i class="ni ni-delivery-fast text-white opacity-10"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Jasa</h6>
-                      <span class="text-xs font-weight-bold">20</span>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-                  <div class="d-flex align-items-center">
-                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                      <i class="ni ni-app text-white opacity-10"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Lainnya</h6>
-                      <span class="text-xs font-weight-bold">36</span>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                  </div>
+                <?php endforeach; ?>
                 </li>
               </ul>
             </div>

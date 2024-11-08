@@ -2,25 +2,29 @@
 
 namespace App\Controllers;
 
-use App\Models\PendapatanModel;
-
 class Admin extends BaseController
 {
-    
 
     public function index()
     {
-        $pendapatanModel = new PendapatanModel();
-        
-        $currentMonth = date('m');
-        $currentYear = date('Y');
+
+        $currentMonth = $this->request->getPost('month') ?? date('m');
+        $currentYear = $this->request->getPost('year') ?? date('Y');
 
         $data = [
             'title' => 'Dashboard Admin | SiUMKM',
             'navtitle' => 'Dashboard',
-            'pendapatan' => $pendapatanModel->getPendapatanByMonthYear($currentMonth, $currentYear),
+            'pendapatan' => $this->pendapatanModel->getPendapatanByMonthYear($currentMonth, $currentYear),     
+            'total_produk' => $this->produkModel->countAll(),
+            'kategori' => $this->kategoriModel->getKategoriAndCountProduk(),
             'month' => $currentMonth,
             'year' => $currentYear
+        ];
+
+        $data['umkm'] = [
+            'total' => $this->umkmModel->countAll(),
+            'verif' => $this->umkmModel->getTotalUmkmByStatus('Terverifikasi'),
+            'nonverif' => $this->umkmModel->getTotalUmkmByStatus('Belum Terverifikasi')
         ];
 
         return view('admin/dashboard', $data);

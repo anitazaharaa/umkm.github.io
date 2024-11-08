@@ -26,6 +26,16 @@
                 ->where(['id_produk' => $id_produk])
                 ->first();
         }
+
+        public function getProdukByKategori($id_kategori)
+        {
+            return $this->select('tbl_produk.*, tbl_kategori.nama_kategori')
+                        ->join('tbl_kategori', 'tbl_kategori.id_kategori = tbl_produk.id_kategori')
+                        ->where(['tbl_produk.id_kategori' => $id_kategori])
+                        ->findAll();
+        }
+
+
     
     }
 
