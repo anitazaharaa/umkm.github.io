@@ -67,7 +67,7 @@
                                     </div>
                                 </td>
                                 <td class="align-middle mb-0">
-                                    <a href="/admin/produk/detail/<?= $item['id_laporan']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="/admin/laporan/detail/<?= $item['id_laporan']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         <button class="btn btn-info btn-sm" style="margin: 0;">Detail</button>
                                     </a>
                                 </td>

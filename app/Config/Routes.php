@@ -38,3 +38,7 @@ $routes->get('/admin/user/hapus/(:num)', 'User::hapus/$1');
 $routes->get('/admin/laporan', 'Laporan::index');
 $routes->get('/admin/laporan/tambahpendapatan', 'Laporan::tambah');
 $routes->post('/admin/laporan/simpan', 'Laporan::simpan');
+$routes->get('/admin/laporan/detail/(:any)', 'Laporan::detail/$1');
+$routes->get('/admin/laporan/hapus/(:any)', 'Laporan::hapus/$1');
+$routes->get('/admin/laporan/ubah/(:any)', 'Laporan::ubah/$1');
+$routes->post('/admin/laporan/update', 'Laporan::update');

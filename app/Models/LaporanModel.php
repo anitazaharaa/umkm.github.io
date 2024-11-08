@@ -9,7 +9,7 @@
         protected $table = 'tbl_laporan';
         protected $primaryKey = 'id_laporan';
         protected $useTimestamps = true;
-        protected $allowedFields = ['id_laporan','nama_laporan'];
+        protected $allowedFields = ['id_laporan','tanggal_laporan','nama_laporan'];
 
     }
 
