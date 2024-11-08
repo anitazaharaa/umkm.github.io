@@ -61,5 +61,6 @@ abstract class BaseController extends Controller
         $this->umkmModel = new \App\Models\UmkmModel();
         $this->produkModel = new \App\Models\ProdukModel();
         $this->pendapatanModel = new \App\Models\PendapatanModel();
+        $this->laporanModel = new \App\Models\LaporanModel();
     }
 }

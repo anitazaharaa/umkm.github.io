@@ -2,30 +2,39 @@
 
 namespace App\Controllers;
 
-use App\Models\UmkmModel;
-use App\Models\PenggunaModel;
 
 class Umkm extends BaseController
 {
     public function index()
     {
-        $umkmModel = new UmkmModel();
         $data = [
             'title' => 'Data UMKM | SiUMKM',
             'navtitle' => 'Data UMKM',
-            'umkm' => $umkmModel->findAll()
+            'umkm' => $this->umkmModel->findAll()
         ];
 
         return view('/admin/umkm', $data);
     }
 
+    public function cari(){
+        $keyword = $this->request->getVar('keyword');
+
+        $data = [
+            'title' => 'Data UMKM | SiUMKM',
+            'navtitle' => 'Data UMKM',
+            'umkm' => $this->umkmModel->like('nama_pemilik', $keyword)->findAll()
+        ];
+
+        return view('/admin/umkm', $data);
+    }
+
+
     public function detail($id)
     {
-        $umkmModel = new UmkmModel();
         $data = [
             'title' => 'Detail UMKM | SiUMKM',
             'navtitle' => 'Data UMKM',
-            'umkm' => $umkmModel->find($id)
+            'umkm' => $this->umkmModel->find($id)
         ];
 
         return view('/admin/detail_umkm', $data);
@@ -33,11 +42,10 @@ class Umkm extends BaseController
 
     public function ubah($id)
     {
-        $umkmModel = new UmkmModel();
         $data = [
             'title' => 'Ubah UMKM | SiUMKM',
             'navtitle' => 'Data UMKM',
-            'umkm' => $umkmModel->find($id)
+            'umkm' => $this->umkmModel->find($id)
         ];
 
         return view('/admin/ubah_umkm', $data);
@@ -45,7 +53,6 @@ class Umkm extends BaseController
 
     public function update()
     {
-        $umkmModel = new UmkmModel();
         $id = $this->request->getVar('id_umkm');
         $data = [
             'nama_pemilik' => $this->request->getVar('nama_pemilik'),
@@ -56,7 +63,7 @@ class Umkm extends BaseController
             'status' => $this->request->getVar('status')
         ];
 
-        $umkmModel->update($id, $data);
+        $this->umkmModel->update($id, $data);
 
         session()->setFlashdata('success', 'Data berhasil disimpan!');
 
@@ -65,16 +72,14 @@ class Umkm extends BaseController
 
     public function hapus($id, $username)
     {
-        $umkmModel = new UmkmModel();
-        $penggunaModel = new PenggunaModel();
 
         // Delete UMKM data
-        $umkmModel->delete($id);
+        $this->umkmModel->delete($id);
 
         // Delete Pengguna data
-        $pengguna = $penggunaModel->where('username', $username)->first();
+        $pengguna = $this->PenggunaModel->where('username', $username)->first();
         if ($pengguna) {
-            $penggunaModel->delete($pengguna['id']);
+            $this->PenggunaModel->delete($pengguna['id']);
         }
 
         session()->setFlashdata('success', 'Data berhasil dihapus!');

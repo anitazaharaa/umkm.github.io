@@ -14,6 +14,13 @@
                    <?= session()->getFlashdata('success') ?>
                  </div>
               <?php endif; ?>
+
+              <div class="d-flex justify-content-end">
+                <form method="get" action="/admin/produk/cari" class="d-flex mx-4 mt-2">
+                  <input type="text" class="form-control me-2" placeholder="Cari Produk" name="keyword" style="height: 38px;">
+                  <button class="btn btn-sm btn-info px-5" type="submit" style="margin-bottom: 0px; height: 38px;">Cari</button>
+                </form>
+              </div>
             </div>
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
@@ -74,7 +81,11 @@
                                 </td>
                             </tr>
                     <?php endforeach; ?>  
-          
+                    <?php if (empty($produk)): ?>
+                          <tr>
+                            <td colspan="6" class="text-center">Data tidak ditemukan</td>
+                          </tr>
+                    <?php endif; ?>
                    
 
                   </tbody>

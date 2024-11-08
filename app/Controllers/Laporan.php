@@ -10,12 +10,11 @@ class Laporan extends BaseController
     
     public function index()
     {
-        $laporanModel = new LaporanModel();
 
         $data = [
             'title' => 'Laporan UMKM | SiUMKM',
             'navtitle' => 'Laporan UMKM',
-            'laporan' => $laporanModel->orderBy('tanggal_laporan', 'ASC')->findAll(),
+            'laporan' => $this->laporanModel->orderBy('tanggal_laporan', 'ASC')->findAll(),
         ];
 
         return view('admin/laporan', $data);
@@ -34,13 +33,11 @@ class Laporan extends BaseController
     public function simpan()
     {
         
-        $pendapatanModel = new PendapatanModel();
-        $laporanModel = new LaporanModel();
 
         $tanggalLaporan = $this->request->getPost('tanggal_laporan');
         $month = date('F', strtotime($tanggalLaporan));
 
-        $lastLaporan = $laporanModel->orderBy('id_laporan', 'DESC')->first();
+        $lastLaporan = $this->laporanModel->orderBy('id_laporan', 'DESC')->first();
         if ($lastLaporan) {
             $lastIdNumber = (int) substr($lastLaporan['id_laporan'], 4);
             $newIdNumber = $lastIdNumber + 1;
@@ -70,19 +67,17 @@ class Laporan extends BaseController
             ];
         }
         
-        $laporanModel->insert($dataLaporan);
-        $pendapatanModel->insertBatch($batchData);
+        $this->laporanModel->insert($dataLaporan);
+        $this->pendapatanModel->insertBatch($batchData);
 
         return redirect()->to('/admin/laporan')->with('success', 'Data pendapatan berhasil disimpan');
     }
 
     public function detail($id)
     {
-        $pendapatanModel = new PendapatanModel();
-        $laporanModel = new LaporanModel();
 
-        $laporan = $laporanModel->find($id);
-        $pendapatan = $pendapatanModel->where('id_laporan', $id)->findAll();
+        $laporan = $this->laporanModel->find($id);
+        $pendapatan = $this->pendapatanModel->where('id_laporan', $id)->findAll();
 
         $data = [
             'title' => 'Detail Laporan Pendapatan UMKM | SiUMKM',
@@ -96,22 +91,18 @@ class Laporan extends BaseController
 
     public function hapus($id)
     {
-        $pendapatanModel = new PendapatanModel();
-        $laporanModel = new LaporanModel();
 
-        $pendapatanModel->where('id_laporan', $id)->delete();
-        $laporanModel->delete($id);
+        $this->pendapatanModel->where('id_laporan', $id)->delete();
+        $this->laporanModel->delete($id);
 
         return redirect()->to('/admin/laporan')->with('success', 'Data pendapatan berhasil dihapus');
     }
 
     public function ubah($id)
     {
-        $pendapatanModel = new PendapatanModel();
-        $laporanModel = new LaporanModel();
 
-        $laporan = $laporanModel->find($id);
-        $pendapatan = $pendapatanModel->where('id_laporan', $id)->findAll();
+        $laporan = $this->laporanModel->find($id);
+        $pendapatan = $this->pendapatanModel->where('id_laporan', $id)->findAll();
 
         $data = [
             'title' => 'Ubah Laporan Pendapatan UMKM | SiUMKM',
@@ -125,8 +116,6 @@ class Laporan extends BaseController
 
     public function update()
     {
-        $pendapatanModel = new PendapatanModel();
-        $laporanModel = new LaporanModel();
 
         $idLaporan = $this->request->getPost('id_laporan');
         $tanggalLaporan = $this->request->getPost('tanggal_laporan');
@@ -144,14 +133,14 @@ class Laporan extends BaseController
         $batchData = [];
         foreach ($kecamatanNames as $kecamatan) {
             $batchData[] = [
-                'id_pendapatan' => $pendapatanModel->where('id_laporan', $idLaporan)->where('nama_kecamatan', $kecamatan)->first()['id_pendapatan'],
+                'id_pendapatan' => $this->pendapatanModel->where('id_laporan', $idLaporan)->where('nama_kecamatan', $kecamatan)->first()['id_pendapatan'],
                 'jumlah_pendapatan' => $this->request->getPost($kecamatan),
             ];
         }
 
-        $laporanModel->update($idLaporan, $dataLaporan);
+        $this->laporanModel->update($idLaporan, $dataLaporan);
 
-        $pendapatanModel->updateBatch($batchData, 'id_pendapatan');
+        $this->pendapatanModel->updateBatch($batchData, 'id_pendapatan');
 
         return redirect()->to('/admin/laporan/detail/' . $idLaporan)->with('success', 'Data laporan berhasil diubah');
     }

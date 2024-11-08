@@ -15,9 +15,15 @@
                  </div>
               <?php endif; ?>
 
-            <a href="/admin/user/tambah">
-              <button class="btn btn-success btn-sm col-md-2 mx-4 mt-2">Tambah Pengguna</button>
-            </a>
+            <div class="d-flex justify-content-between">
+              <a href="/admin/user/tambah">
+                <button class="btn btn-success btn-sm mx-4 mt-2">Tambah Kategori</button>
+              </a>
+              <form method="get" action="/admin/user/cari" class="d-flex mx-4 mt-2">
+                <input type="text" class="form-control me-2" placeholder="Cari User" name="keyword" style="height: 38px;">
+                <button class="btn btn-sm btn-info px-5" type="submit" style="margin-bottom: 0px; height: 38px;">Cari</button>
+              </form>
+            </div>
             
 
             <div class="card-body px-0 pt-0 pb-2">
@@ -74,6 +80,11 @@
                                 </td>
                             </tr>
                         <?php endforeach; ?>
+                        <?php if (empty($user)): ?>
+                          <tr>
+                            <td colspan="6" class="text-center">Data tidak ditemukan</td>
+                          </tr>
+                        <?php endif; ?>
                     
                   </tbody>
                 </table>

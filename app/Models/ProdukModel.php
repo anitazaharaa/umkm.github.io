@@ -35,6 +35,14 @@
                         ->findAll();
         }
 
+        public function searchProduk($keyword)
+        {
+            return $this->select('tbl_produk.*, tbl_kategori.nama_kategori')
+                        ->join('tbl_kategori', 'tbl_kategori.id_kategori = tbl_produk.id_kategori')
+                        ->like('nama_produk', $keyword)
+                        ->findAll();
+        }
+
 
     
     }

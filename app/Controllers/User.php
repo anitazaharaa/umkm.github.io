@@ -2,18 +2,26 @@
 
 namespace App\Controllers;
 
-use App\Models\UmkmModel;
-use App\Models\PenggunaModel;
-
 class User extends BaseController
 {
     public function index()
     {
-        $penggunaModel = new PenggunaModel();
         $data = [
             'title' => 'User Management | SiUMKM',
             'navtitle' => 'User Management',
-            'user' => $penggunaModel->findAll()
+            'user' => $this->PenggunaModel->findAll()
+        ];
+
+        return view('/admin/user', $data);
+    }
+
+    public function cari()
+    {
+        $keyword = $this->request->getVar('keyword');
+        $data = [
+            'title' => 'User Management | SiUMKM',
+            'navtitle' => 'User Management',
+            'user' => $this->PenggunaModel->like('nama_pengguna', $keyword)->findAll()
         ];
 
         return view('/admin/user', $data);
@@ -31,7 +39,6 @@ class User extends BaseController
 
     public function simpan()
     {    
-        $penggunaModel = new PenggunaModel();
         $data = [
             'nama_pengguna' => $this->request->getVar('nama_pengguna'),
             'username' => $this->request->getVar('username'),
@@ -39,18 +46,17 @@ class User extends BaseController
             'role' => $this->request->getVar('role')
         ];
 
-        $penggunaModel->insert($data);
+        $this->PenggunaModel->insert($data);
 
         return redirect()->to('/admin/user')->with('success', 'Data pengguna berhasil disimpan');
     }
 
     public function ubah($id)
     {
-        $penggunaModel = new PenggunaModel();
         $data = [
             'title' => 'Ubah Pengguna | SiUMKM',
             'navtitle' => 'Ubah Pengguna',
-            'pengguna' => $penggunaModel->find($id)
+            'pengguna' => $this->PenggunaModel->find($id)
         ];
 
         return view('/admin/ubah_pengguna', $data);
@@ -58,7 +64,6 @@ class User extends BaseController
 
     public function update()
     {
-        $penggunaModel = new PenggunaModel();
         $data = [
             'id' => $this->request->getVar('id'),
             'nama_pengguna' => $this->request->getVar('nama_pengguna'),
@@ -70,28 +75,26 @@ class User extends BaseController
             $data['password'] = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
         }
 
-        $penggunaModel->save($data);
+        $this->PenggunaModel->save($data);
 
         return redirect()->to('/admin/user')->with('success', 'Data pengguna berhasil diubah');
     }
 
     public function hapus($id)
     {
-        $penggunaModel = new PenggunaModel();
 
 
         // Get the user to be deleted
-        $pengguna = $penggunaModel->find($id);
+        $pengguna = $this->PenggunaModel->find($id);
         $username = $pengguna['username'];
         $role = $pengguna['role'];
 
         // Delete the user
-        $penggunaModel->delete($id);
+        $this->PenggunaModel->delete($id);
 
         // If the role is 'pelaku_umkm', delete the related data from the umkm table
         if ($role == 'pelaku_umkm') {
-            $umkmModel = new UmkmModel();
-            $umkmModel->where('username', $username)->delete();
+            $this->umkmModel->where('username', $username)->delete();
         }
 
         return redirect()->to('/admin/user')->with('success', 'Data pengguna berhasil dihapus');

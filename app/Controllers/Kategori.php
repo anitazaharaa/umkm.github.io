@@ -1,19 +1,29 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\KategoriModel;
 
 class Kategori extends BaseController
 {
     public function index()
     {
 
-        $kategoriModel = new KategoriModel();
+        $data = [
+            'title' => 'Data Kategori | SiUMKM',
+            'navtitle' => 'Kategori',
+            'kategori' => $this->kategoriModel->findAll()
+        ];
+
+        return view('admin/kategori', $data);
+    }
+
+    public function cari(){
+
+        $keyword = $this->request->getVar('keyword');
 
         $data = [
             'title' => 'Data Kategori | SiUMKM',
             'navtitle' => 'Kategori',
-            'kategori' => $kategoriModel->findAll()
+            'kategori' => $this->kategoriModel->like('nama_kategori', $keyword)->findAll()
         ];
 
         return view('admin/kategori', $data);
@@ -21,8 +31,6 @@ class Kategori extends BaseController
 
     public function tambah()
     {
-
-        $kategoriModel = new KategoriModel();
 
         $data = [
             'title' => 'Tambah Kategori | SiUMKM',
@@ -34,9 +42,8 @@ class Kategori extends BaseController
 
     public function simpan()
     {
-        $kategoriModel = new KategoriModel();
-
-        $kategoriModel->save([
+    
+        $this->kategoriModel->save([
             'nama_kategori' => $this->request->getVar('nama_kategori')
         ]);
 
@@ -47,7 +54,6 @@ class Kategori extends BaseController
 
     public function hapus($id)
     {
-        $kategoriModel = new KategoriModel();
 
         $kategoriModel->delete($id);
 
@@ -58,7 +64,6 @@ class Kategori extends BaseController
 
     public function edit($id)
     {
-        $kategoriModel = new KategoriModel();
 
         $data = [
             'title' => 'Edit Kategori | SiUMKM',
@@ -71,7 +76,6 @@ class Kategori extends BaseController
 
     public function update()
     {
-        $kategoriModel = new KategoriModel();
 
         $kategoriModel->save([
             'id_kategori' => $this->request->getVar('id_kategori'),
