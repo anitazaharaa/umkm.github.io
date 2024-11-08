@@ -55,7 +55,7 @@ class Kategori extends BaseController
     public function hapus($id)
     {
 
-        $kategoriModel->delete($id);
+        $this->kategoriModel->delete($id);
 
         session()->setFlashdata('success', 'Data berhasil dihapus!');
 
@@ -68,7 +68,7 @@ class Kategori extends BaseController
         $data = [
             'title' => 'Edit Kategori | SiUMKM',
             'navtitle' => 'Kategori',
-            'kategori' => $kategoriModel->find($id)
+            'kategori' => $this->kategoriModel->find($id)
         ];
 
         return view('admin/ubah_kategori', $data);
@@ -77,7 +77,7 @@ class Kategori extends BaseController
     public function update()
     {
 
-        $kategoriModel->save([
+        $this->kategoriModel->save([
             'id_kategori' => $this->request->getVar('id_kategori'),
             'nama_kategori' => $this->request->getVar('nama_kategori')
         ]);
