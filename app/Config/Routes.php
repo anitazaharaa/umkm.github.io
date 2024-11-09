@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/register', 'Home::register');
-$routes->post('/home/simpan', 'Home::simpan_umkm');
+$routes->post('/home/simpan', 'Home::simpan');
 $routes->post('/home/login', 'Home::login');
 $routes->get('/home/logout', 'Home::logout');
 

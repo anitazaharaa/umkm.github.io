@@ -1,9 +1,6 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\HomeModel;
-use App\Models\PenggunaModel;
-use App\Models\UmkmModel;
 
 class Home extends BaseController
 {
@@ -25,26 +22,43 @@ class Home extends BaseController
         return view('home/register', $data);
     }
 
-    public function simpan_umkm(){
-      
-        $penggunaModel = new PenggunaModel();
-        $umkmModel = new UmkmModel();
+    public function simpan()
+    {
+        $validation = \Config\Services::validation();
 
-        $penggunaModel->save([
+        $validation->setRules([
+            'nama_pemilik' => 'required',
+            'NIK' => 'required|numeric|min_length[16]',
+            'email' => 'required|valid_email',
+            'no_hp' => 'required|numeric|min_length[10]',
+            'alamat_umkm' => 'required',
+            'username' => 'required|min_length[5]',
+            'password' => 'required|min_length[6]'
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            return redirect()->back()->withInput()->with('validation', $validation->getErrors());
+        }
+
+        $lastPengguna = $this->PenggunaModel->orderBy('id_pengguna', 'DESC')->first();
+        $newIdPengguna = $lastPengguna['id_pengguna'] + 1;
+
+        $this->PenggunaModel->insert([
+            'id_pengguna' => $newIdPengguna,
             'nama_pengguna' => $this->request->getVar('nama_pemilik'),
             'username' => $this->request->getVar('username'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
             'role' => 'pelaku_umkm'
         ]);
 
-        $umkmModel->save([
+        $this->umkmModel->insert([
             'nama_pemilik' => $this->request->getVar('nama_pemilik'),
             'NIK' => $this->request->getVar('NIK'),
             'email' => $this->request->getVar('email'),
             'no_hp' => $this->request->getVar('no_hp'),
             'alamat_umkm' => $this->request->getVar('alamat_umkm'),
-            'status' => 'Belum Teraktivasi',
-            'username' => $this->request->getVar('username'),
+            'status' => 'Belum Terverifikasi',
+            'id_pengguna' => $newIdPengguna,
         ]);
 
         session()->setFlashdata('success', 'Registrasi berhasil! Silahkan login.');
@@ -55,12 +69,11 @@ class Home extends BaseController
     public function login()
     {
         $session = session();
-        $penggunaModel = new PenggunaModel();
 
         $username = $this->request->getVar('username');
         $password = $this->request->getVar('password');
 
-        $user = $penggunaModel->where('username', $username)->first();
+        $user = $this->PenggunaModel->where('username', $username)->first();
 
         if ($user) {
             $pass = $user['password'];
@@ -78,7 +91,7 @@ class Home extends BaseController
                 } else if($user['role'] == 'petugas'){
                     return redirect()->to('/petugas');
                 } else {
-                    return redirect()->to('/pelaku-umkm');
+                    return redirect()->to('/umkm');
                 }
             } else {
                 $session->setFlashdata('error', 'Password salah.');
