@@ -226,6 +226,7 @@
   <script src="/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="/js/plugins/chartjs.min.js"></script>
   <?= $this->renderSection('chart') ?>
+  <?= $this->renderSection('sweetalert') ?>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {

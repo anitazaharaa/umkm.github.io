@@ -66,7 +66,7 @@
               <hr class="horizontal dark">
               <div class="form-group text-end">
                 <a href="/admin/produk/hapus/<?= $produk['id_produk'] ?>">
-                  <button class="btn btn-danger btn-sm text-end">Hapus</button>
+                  <button class="btn btn-danger btn-sm text-end hapusbtn">Hapus</button>
                 </a>
               </div>
             </div>
@@ -82,3 +82,10 @@
     </div>
   <?= $this->endSection() ?>
   
+  <?= $this->section('sweetalert') ?>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="/js/hapusalert.js"></script>
+
+<?= $this->endSection() ?>

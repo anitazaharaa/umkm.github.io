@@ -19,7 +19,7 @@
             </div>
             <div class="card-body">
                 <form action="/admin/updateprofile" method="POST">
-                <input type="hidden" name="id" value="<?= $profile['id'] ?>">
+                <input type="hidden" name="id" value="<?= $profile['id_pengguna'] ?>">
                 <div class="form-group">
                     <label for="nama_pengguna">Nama</label>
                     <input type="text" class="form-control" name="nama_pengguna" value="<?= $profile['nama_pengguna'] ?>" id="nama_pengguna">

@@ -53,7 +53,7 @@ class Admin extends BaseController
             'role' => $this->request->getPost('role')
         ];
 
-        $this->PenggunaModel->update($this->request->getPost('id'), $data);
+        $this->PenggunaModel->update($this->request->getPost('id_pengguna'), $data);
 
         $ses_data = [
                     'username' => $this->request->getPost('username'),

@@ -71,11 +71,11 @@
                                     </div>
                                 </td>
                                 <td class="align-middle mb-0">
-                                    <a href="/admin/user/ubah/<?= $item['id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="/admin/user/ubah/<?= $item['id_pengguna']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         <button class="btn btn-primary btn-sm" style="margin: 0;">Edit</button>
                                     </a>
-                                    <a href="/admin/user/hapus/<?= $item['id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
-                                        <button class="btn btn-danger btn-sm" style="margin: 0;">Hapus</button>
+                                    <a href="/admin/user/hapus/<?= $item['id_pengguna']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
+                                        <button class="btn btn-danger btn-sm hapusbtn" style="margin: 0;">Hapus</button>
                                     </a>
                                 </td>
                             </tr>
@@ -95,4 +95,12 @@
       </div>
     </div>
   <?= $this->endSection() ?>
+
+<?= $this->section('sweetalert') ?>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="/js/hapusalert.js"></script>
+
+<?= $this->endSection() ?>
   

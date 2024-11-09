@@ -86,7 +86,7 @@ class User extends BaseController
 
         // Get the user to be deleted
         $pengguna = $this->PenggunaModel->find($id);
-        $username = $pengguna['username'];
+
         $role = $pengguna['role'];
 
         // Delete the user
@@ -94,7 +94,7 @@ class User extends BaseController
 
         // If the role is 'pelaku_umkm', delete the related data from the umkm table
         if ($role == 'pelaku_umkm') {
-            $this->umkmModel->where('username', $username)->delete();
+            $this->umkmModel->where('id_pengguna', $id_pengguna)->delete();
         }
 
         return redirect()->to('/admin/user')->with('success', 'Data pengguna berhasil dihapus');

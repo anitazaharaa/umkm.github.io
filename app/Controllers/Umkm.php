@@ -70,17 +70,12 @@ class Umkm extends BaseController
         return redirect()->to('/admin/umkm/detail/' . $id);
     }
 
-    public function hapus($id, $username)
+    public function hapus($id_umkm, $id_pengguna)
     {
 
-        // Delete UMKM data
-        $this->umkmModel->delete($id);
+        $this->umkmModel->delete($id_umkm);
 
-        // Delete Pengguna data
-        $pengguna = $this->PenggunaModel->where('username', $username)->first();
-        if ($pengguna) {
-            $this->PenggunaModel->delete($pengguna['id']);
-        }
+        $this->PenggunaModel->delete($id_pengguna);
 
         session()->setFlashdata('success', 'Data berhasil dihapus!');
 

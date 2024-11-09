@@ -38,8 +38,8 @@
                         <div class="form-group">
                             <label for="status">Status</label>
                             <select class="form-control" name="status" id="status">
-                                <option value="Teraktivasi" <?= $umkm['status'] == 'Teraktivasi' ? 'selected' : '' ?> >Teraktivasi</option>
-                                <option value="Belum Teraktivasi" <?= $umkm['status'] == 'Belum Teraktivasi' ? 'selected' : '' ?>>Belum Teraktivasi</option>
+                                <option value="Terverifikasi" <?= $umkm['status'] == 'Terverifikasi' ? 'selected' : '' ?> >Terverifikasi</option>
+                                <option value="Belum Terverifikasi" <?= $umkm['status'] == 'Belum Terverifikasi' ? 'selected' : '' ?>>Belum Terverifikasi</option>
                             </select>
                         </div>
                         <div class="form-group text-end">

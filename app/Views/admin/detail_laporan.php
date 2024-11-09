@@ -32,7 +32,7 @@
                             <button class="btn btn-sm btn-primary">Ubah</button>
                           </a>
                           <a href="/admin/laporan/hapus/<?= $laporan['id_laporan'] ?>">
-                            <button class="btn btn-sm btn-danger">Hapus</button>
+                            <button class="btn btn-sm btn-danger hapusbtn">Hapus</button>
                           </a>
                       </div>
                       <hr class="horizontal dark">
@@ -53,4 +53,12 @@
       </div>
     </div>
   </div>
+<?= $this->endSection() ?>
+
+<?= $this->section('sweetalert') ?>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="/js/hapusalert.js"></script>
+
 <?= $this->endSection() ?>

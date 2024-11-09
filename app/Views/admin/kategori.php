@@ -59,7 +59,7 @@
                                     <a href="/admin/kategori/ubah/<?= $item['id_kategori']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         <button class="btn btn-primary btn-sm" style="margin: 0;">Edit</button>
                                     </a>
-                                    <a href="/admin/kategori/hapus/<?= $item['id_kategori']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
+                                    <a href="/admin/kategori/hapus/<?= $item['id_kategori']?>" class="text-secondary font-weight-bold text-xs hapusbtn" data-toggle="tooltip" data-original-title="Delete user">
                                         <button class="btn btn-danger btn-sm" style="margin: 0;">Hapus</button>
                                     </a>
                                 </td>
@@ -80,3 +80,10 @@
     </div>
   <?= $this->endSection() ?>
   
+  <?= $this->section('sweetalert') ?>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="/js/hapusalert.js"></script>
+
+  <?= $this->endSection() ?>

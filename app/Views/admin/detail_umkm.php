@@ -53,8 +53,8 @@
                             <a href="<?= base_url('admin/umkm/ubah/' . $umkm['id_umkm']) ?>">
                                 <button class="btn btn-sm btn-primary">Ubah Data</button>
                             </a>
-                            <a href="<?= base_url('admin/umkm/hapus/' . $umkm['id_umkm'] . '/' . $umkm['username']) ?>">
-                                <button class="btn btn-sm btn-danger">Hapus Data</button>
+                            <a href="<?= base_url('admin/umkm/hapus/' . $umkm['id_umkm'] . '/' . $umkm['id_pengguna']) ?>">
+                                <button class="btn btn-sm btn-danger hapusbtn">Hapus Data</button>
                             </a>
                         </div>
                 </div>   
@@ -64,3 +64,10 @@
     </div>
   <?= $this->endSection() ?>
   
+<?= $this->section('sweetalert') ?>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="/js/hapusalert.js"></script>
+
+<?= $this->endSection() ?>
