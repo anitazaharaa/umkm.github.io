@@ -9,9 +9,12 @@ $routes->get('/', 'Home::index');
 $routes->get('/register', 'Home::register');
 $routes->post('/home/simpan', 'Home::simpan_umkm');
 $routes->post('/home/login', 'Home::login');
+$routes->get('/home/logout', 'Home::logout');
 
 $routes->get('/admin', 'Admin::index');
 $routes->post('/admin', 'Admin::index');
+$routes->get('/admin/profile', 'Admin::profile');
+$routes->post('/admin/updateprofile', 'Admin::updateprofile');
 
 $routes->get('/admin/kategori', 'Kategori::index' );
 $routes->get('/admin/kategori/cari', 'Kategori::cari');

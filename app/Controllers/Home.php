@@ -89,4 +89,11 @@ class Home extends BaseController
             return redirect()->to('/');
         }
     }
+
+    public function logout()
+    {
+        $session = session();
+        $session->destroy();
+        return redirect()->to('/');
+    }
 }

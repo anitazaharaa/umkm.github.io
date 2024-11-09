@@ -30,4 +30,39 @@ class Admin extends BaseController
         return view('admin/dashboard', $data);
     }
 
+    public function profile()
+    {
+        $session = session();
+
+        $data = [
+            'title' => 'Profile Admin | SiUMKM',
+            'navtitle' => 'Profile',
+            'profile' => $this->PenggunaModel->where('username', $session->get('username'))->first()
+        ];
+
+        return view('admin/profile', $data);
+    }
+
+    public function updateprofile()
+    {
+        $session = session();
+
+        $data = [
+            'nama_pengguna' => $this->request->getPost('nama_pengguna'),
+            'username' => $this->request->getPost('username'),
+            'role' => $this->request->getPost('role')
+        ];
+
+        $this->PenggunaModel->update($this->request->getPost('id'), $data);
+
+        $ses_data = [
+                    'username' => $this->request->getPost('username'),
+                    'role' => $this->request->getPost('role'),
+                    'logged_in' => TRUE
+                ];
+        $session->set($ses_data);
+
+        return redirect()->to('/admin/profile')->with('success', 'Profile berhasil diubah');
+    }
+
 }
