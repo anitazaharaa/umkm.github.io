@@ -31,8 +31,8 @@
                           <a href="/admin/laporan/ubah/<?= $laporan['id_laporan'] ?>"">
                             <button class="btn btn-sm btn-primary">Ubah</button>
                           </a>
-                          <a href="/admin/laporan/hapus/<?= $laporan['id_laporan'] ?>">
-                            <button class="btn btn-sm btn-danger hapusbtn">Hapus</button>
+                          <a href="/admin/laporan/hapus/<?= $laporan['id_laporan'] ?>" class="hapusbtn">
+                            <button class="btn btn-sm btn-danger">Hapus</button>
                           </a>
                       </div>
                       <hr class="horizontal dark">

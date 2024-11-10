@@ -65,8 +65,8 @@
               </div>
               <hr class="horizontal dark">
               <div class="form-group text-end">
-                <a href="/admin/produk/hapus/<?= $produk['id_produk'] ?>">
-                  <button class="btn btn-danger btn-sm text-end hapusbtn">Hapus</button>
+                <a href="/admin/produk/hapus/<?= $produk['id_produk'] ?>" class="hapusbtn">
+                  <button class="btn btn-danger btn-sm text-end">Hapus</button>
                 </a>
               </div>
             </div>

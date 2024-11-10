@@ -74,8 +74,8 @@
                                     <a href="/admin/user/ubah/<?= $item['id_pengguna']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         <button class="btn btn-primary btn-sm" style="margin: 0;">Edit</button>
                                     </a>
-                                    <a href="/admin/user/hapus/<?= $item['id_pengguna']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
-                                        <button class="btn btn-danger btn-sm hapusbtn" style="margin: 0;">Hapus</button>
+                                    <a href="/admin/user/hapus/<?= $item['id_pengguna']?>" class="text-secondary font-weight-bold text-xs hapusbtn" data-toggle="tooltip" data-original-title="Delete user">
+                                        <button class="btn btn-danger btn-sm" style="margin: 0;">Hapus</button>
                                     </a>
                                 </td>
                             </tr>

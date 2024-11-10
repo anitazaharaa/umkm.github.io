@@ -39,7 +39,11 @@ class User extends BaseController
 
     public function simpan()
     {    
+        $lastPengguna = $this->PenggunaModel->orderBy('id_pengguna', 'DESC')->first();
+        $newIdPengguna = $lastPengguna['id_pengguna'] + 1;
+
         $data = [
+            'id_pengguna' => $newIdPengguna,
             'nama_pengguna' => $this->request->getVar('nama_pengguna'),
             'username' => $this->request->getVar('username'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
@@ -94,7 +98,7 @@ class User extends BaseController
 
         // If the role is 'pelaku_umkm', delete the related data from the umkm table
         if ($role == 'pelaku_umkm') {
-            $this->umkmModel->where('id_pengguna', $id_pengguna)->delete();
+            $this->umkmModel->where('id_pengguna', $id)->delete();
         }
 
         return redirect()->to('/admin/user')->with('success', 'Data pengguna berhasil dihapus');

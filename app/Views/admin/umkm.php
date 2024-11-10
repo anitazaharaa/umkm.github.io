@@ -70,7 +70,7 @@
                                 <td>
                                     <div class="d-flex px-2 py-1">
                                         <div class="d-flex flex-column justify-content-center">
-                                            <?php if ($item['status'] == 'Belum Teraktivasi'): ?>
+                                            <?php if ($item['status'] == 'Belum Terverifikasi'): ?>
                                               <span class="badge bg-gradient-warning"><?= $item['status'] ?></span>
                                             <?php else: ?>
                                              <span class="badge bg-gradient-success"><?= $item['status'] ?></span>
