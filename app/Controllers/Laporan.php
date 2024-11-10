@@ -17,7 +17,7 @@ class Laporan extends BaseController
             'laporan' => $this->laporanModel->orderBy('tanggal_laporan', 'ASC')->findAll(),
         ];
 
-        return view('admin/laporan', $data);
+        return view('/page/laporan', $data);
     }
 
     public function tambah()
@@ -27,7 +27,7 @@ class Laporan extends BaseController
             'navtitle' => 'Laporan UMKM',
         ];
 
-        return view('admin/tambah_pendapatan', $data);
+        return view('/page/tambah_pendapatan', $data);
     }
 
     public function simpan()
@@ -70,7 +70,7 @@ class Laporan extends BaseController
         $this->laporanModel->insert($dataLaporan);
         $this->pendapatanModel->insertBatch($batchData);
 
-        return redirect()->to('/admin/laporan')->with('success', 'Data pendapatan berhasil disimpan');
+        return redirect()->to('/page/laporan')->with('success', 'Data pendapatan berhasil disimpan');
     }
 
     public function detail($id)
@@ -86,7 +86,7 @@ class Laporan extends BaseController
             'pendapatan' => $pendapatan,
         ];
 
-        return view('/admin/detail_laporan', $data);
+        return view('/page/detail_laporan', $data);
     }
 
     public function hapus($id)
@@ -95,7 +95,7 @@ class Laporan extends BaseController
         $this->pendapatanModel->where('id_laporan', $id)->delete();
         $this->laporanModel->delete($id);
 
-        return redirect()->to('/admin/laporan')->with('success', 'Data pendapatan berhasil dihapus');
+        return redirect()->to('/page/laporan')->with('success', 'Data pendapatan berhasil dihapus');
     }
 
     public function ubah($id)
@@ -111,7 +111,7 @@ class Laporan extends BaseController
             'pendapatan' => $pendapatan,
         ];
 
-        return view('/admin/ubah_pendapatan', $data);
+        return view('/page/ubah_pendapatan', $data);
     }
 
     public function update()
@@ -142,7 +142,7 @@ class Laporan extends BaseController
 
         $this->pendapatanModel->updateBatch($batchData, 'id_pendapatan');
 
-        return redirect()->to('/admin/laporan/detail/' . $idLaporan)->with('success', 'Data laporan berhasil diubah');
+        return redirect()->to('/page/laporan/detail/' . $idLaporan)->with('success', 'Data laporan berhasil diubah');
     }
 
 }

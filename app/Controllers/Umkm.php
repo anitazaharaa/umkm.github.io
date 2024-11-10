@@ -13,7 +13,7 @@ class Umkm extends BaseController
             'umkm' => $this->umkmModel->findAll()
         ];
 
-        return view('/admin/umkm', $data);
+        return view('/page/umkm', $data);
     }
 
     public function cari(){
@@ -25,7 +25,7 @@ class Umkm extends BaseController
             'umkm' => $this->umkmModel->like('nama_pemilik', $keyword)->findAll()
         ];
 
-        return view('/admin/umkm', $data);
+        return view('/page/umkm', $data);
     }
 
 
@@ -37,7 +37,7 @@ class Umkm extends BaseController
             'umkm' => $this->umkmModel->find($id)
         ];
 
-        return view('/admin/detail_umkm', $data);
+        return view('/page/detail_umkm', $data);
     }
 
     public function ubah($id)
@@ -48,7 +48,7 @@ class Umkm extends BaseController
             'umkm' => $this->umkmModel->find($id)
         ];
 
-        return view('/admin/ubah_umkm', $data);
+        return view('/page/ubah_umkm', $data);
     }
 
     public function update()
@@ -67,7 +67,7 @@ class Umkm extends BaseController
 
         session()->setFlashdata('success', 'Data berhasil disimpan!');
 
-        return redirect()->to('/admin/umkm/detail/' . $id);
+        return redirect()->to('/page/umkm/detail/' . $id);
     }
 
     public function hapus($id_umkm, $id_pengguna)
@@ -79,6 +79,6 @@ class Umkm extends BaseController
 
         session()->setFlashdata('success', 'Data berhasil dihapus!');
 
-        return redirect()->to('/admin/umkm');
+        return redirect()->to('/page/umkm');
     }
 }

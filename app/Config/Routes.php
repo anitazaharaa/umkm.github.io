@@ -11,10 +11,10 @@ $routes->post('/home/simpan', 'Home::simpan');
 $routes->post('/home/login', 'Home::login');
 $routes->get('/home/logout', 'Home::logout');
 
-$routes->get('/admin', 'Admin::index');
-$routes->post('/admin', 'Admin::index');
-$routes->get('/admin/profile', 'Admin::profile');
-$routes->post('/admin/updateprofile', 'Admin::updateprofile');
+$routes->get('/admin', 'Dashboard::index');
+$routes->post('/admin', 'Dashboard::index');
+$routes->get('/admin/profile', 'Dashboard::profile');
+$routes->post('/admin/updateprofile', 'Dashboard::updateprofile');
 
 $routes->get('/admin/kategori', 'Kategori::index' );
 $routes->get('/admin/kategori/cari', 'Kategori::cari');
@@ -52,3 +52,8 @@ $routes->get('/admin/laporan/detail/(:any)', 'Laporan::detail/$1');
 $routes->get('/admin/laporan/hapus/(:any)', 'Laporan::hapus/$1');
 $routes->get('/admin/laporan/ubah/(:any)', 'Laporan::ubah/$1');
 $routes->post('/admin/laporan/update', 'Laporan::update');
+
+// Petugas
+$routes->get('/petugas', 'Dashboard::index');
+$routes->post('/petugas', 'Dashboard::index');
+$routes->get('/petugas/kategori', 'Kategori::index' );

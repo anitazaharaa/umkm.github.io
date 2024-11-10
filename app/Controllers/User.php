@@ -12,7 +12,7 @@ class User extends BaseController
             'user' => $this->PenggunaModel->findAll()
         ];
 
-        return view('/admin/user', $data);
+        return view('/page/user', $data);
     }
 
     public function cari()
@@ -24,7 +24,7 @@ class User extends BaseController
             'user' => $this->PenggunaModel->like('nama_pengguna', $keyword)->findAll()
         ];
 
-        return view('/admin/user', $data);
+        return view('/page/user', $data);
     }
 
     public function tambah()
@@ -34,7 +34,7 @@ class User extends BaseController
             'navtitle' => 'Tambah Pengguna'
         ];
 
-        return view('/admin/tambah_pengguna', $data);
+        return view('/page/tambah_pengguna', $data);
     }
 
     public function simpan()
@@ -62,7 +62,7 @@ class User extends BaseController
 
         $this->PenggunaModel->insert($data);
 
-        return redirect()->to('/admin/user')->with('success', 'Data pengguna berhasil disimpan');
+        return redirect()->to('/page/user')->with('success', 'Data pengguna berhasil disimpan');
     }
 
     public function ubah($id)
@@ -73,7 +73,7 @@ class User extends BaseController
             'pengguna' => $this->PenggunaModel->find($id)
         ];
 
-        return view('/admin/ubah_pengguna', $data);
+        return view('/page/ubah_pengguna', $data);
     }
 
     public function update()

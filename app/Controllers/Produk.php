@@ -14,7 +14,7 @@ class Produk extends BaseController
             'produk' => $this->produkModel->getProdukWithKategori(),
         ];
 
-        return view('/admin/produk', $data);
+        return view('/page/produk', $data);
     }
 
     public function cari()
@@ -27,7 +27,7 @@ class Produk extends BaseController
             'produk' => $this->produkModel->searchProduk($keyword),
         ];
 
-        return view('/admin/produk', $data);
+        return view('/page/produk', $data);
     }
 
     public function kategori($id_kategori)
@@ -39,7 +39,7 @@ class Produk extends BaseController
             'produk' => $this->produkModel->getProdukByKategori($id_kategori),
         ];
 
-        return view('/admin/produk', $data);
+        return view('/page/produk', $data);
     }
 
     public function detail($id_produk)
@@ -51,7 +51,7 @@ class Produk extends BaseController
             'produk' => $this->produkModel->getProdukDetail($id_produk),
         ];
 
-        return view('/admin/detail_produk', $data);
+        return view('/page/detail_produk', $data);
     }
 
     public function hapus($id_produk)
@@ -61,7 +61,7 @@ class Produk extends BaseController
 
         session()->setFlashdata('success', 'Data berhasil dihapus!');
 
-        return redirect()->to('/admin/produk');
+        return redirect()->to('/page/produk');
     }
 
 

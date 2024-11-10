@@ -9,11 +9,12 @@ class Kategori extends BaseController
 
         $data = [
             'title' => 'Data Kategori | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Kategori',
             'kategori' => $this->kategoriModel->findAll()
         ];
 
-        return view('admin/kategori', $data);
+        return view('/page/kategori', $data);
     }
 
     public function cari(){
@@ -22,11 +23,12 @@ class Kategori extends BaseController
 
         $data = [
             'title' => 'Data Kategori | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Kategori',
             'kategori' => $this->kategoriModel->like('nama_kategori', $keyword)->findAll()
         ];
 
-        return view('admin/kategori', $data);
+        return view('/page/kategori', $data);
     }
 
     public function tambah()
@@ -34,10 +36,11 @@ class Kategori extends BaseController
 
         $data = [
             'title' => 'Tambah Kategori | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Kategori',
         ];
 
-        return view('admin/tambah_kategori', $data);
+        return view('/page/tambah_kategori', $data);
     }
 
     public function simpan()
@@ -49,7 +52,7 @@ class Kategori extends BaseController
 
         session()->setFlashdata('success', 'Data berhasil disimpan!');
 
-        return redirect()->to('/admin/kategori');
+        return redirect()->to('/page/kategori');
     }
 
     public function hapus($id)
@@ -59,7 +62,7 @@ class Kategori extends BaseController
 
         session()->setFlashdata('success', 'Data berhasil dihapus!');
 
-        return redirect()->to('/admin/kategori');
+        return redirect()->to('/page/kategori');
     }
 
     public function edit($id)
@@ -67,11 +70,12 @@ class Kategori extends BaseController
 
         $data = [
             'title' => 'Edit Kategori | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Kategori',
             'kategori' => $this->kategoriModel->find($id)
         ];
 
-        return view('admin/ubah_kategori', $data);
+        return view('/page/ubah_kategori', $data);
     }
 
     public function update()
@@ -84,7 +88,7 @@ class Kategori extends BaseController
 
         session()->setFlashdata('success', 'Data berhasil diubah!');
 
-        return redirect()->to('/admin/kategori');
+        return redirect()->to('/page/kategori');
     }
 
 
