@@ -12,6 +12,15 @@
             </div>
             <div class="card-body px-0 pt-0 pb-2 mt-3 mx-2">
                 <div class="container">
+                                <?php if ($validation = session()->getFlashdata('validation')): ?>
+                            <div class="alert alert-warning text-white">
+                                <ul>
+                                    <?php foreach ($validation as $error): ?>
+                                        <li><?= esc($error) ?></li>
+                                    <?php endforeach ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
                     <form action="/admin/user/simpan" method="post">
                         <?= csrf_field() ?>
                         <div class="form-group">
@@ -27,8 +36,8 @@
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
                         <div class="form-group">
-                            <label for="password_ulang">Ulangi Password</label>
-                            <input type="password" class="form-control" id="password_ulang" name="password_ulang" required>
+                            <label for="confirm_password">Ulangi Password</label>
+                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
                         </div>
                         <div class="form-group">
                             <label for="role">Role</label>

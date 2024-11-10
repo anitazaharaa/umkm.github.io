@@ -55,6 +55,9 @@
                                 <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Password" required>
                                 <small> Password harus minimal 6 karakter</small>
                             </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" name="confirm_password" placeholder="Ulangi Password" aria-label="confirm_password" required>
+                            </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary w-100 my-4 mb-2">Daftar</button>
                             </div>

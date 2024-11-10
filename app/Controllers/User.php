@@ -38,7 +38,17 @@ class User extends BaseController
     }
 
     public function simpan()
-    {    
+    {
+        $validation = \Config\Services::validation();
+
+        $validation->setRules([
+            'confirm_password' => 'required|matches[password]',
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            return redirect()->back()->withInput()->with('validation', $validation->getErrors());
+        }
+
         $lastPengguna = $this->PenggunaModel->orderBy('id_pengguna', 'DESC')->first();
         $newIdPengguna = $lastPengguna['id_pengguna'] + 1;
 

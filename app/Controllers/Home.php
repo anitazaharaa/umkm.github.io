@@ -33,7 +33,8 @@ class Home extends BaseController
             'no_hp' => 'required|numeric|min_length[10]',
             'alamat_umkm' => 'required',
             'username' => 'required|min_length[5]',
-            'password' => 'required|min_length[6]'
+            'password' => 'required|min_length[6]',
+            'confirm_password' => 'required|matches[password]',
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
