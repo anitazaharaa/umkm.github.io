@@ -24,7 +24,7 @@
                               <?= session()->getFlashdata('error') ?>
                           </div>
                       <?php endif; ?>
-                  <form role="form" action="/home/login" method="POST">
+                  <form role="form" action="/login" method="POST">
                     <?= csrf_field() ?>
                     <div class="mb-3">
                       <input type="username" class="form-control form-control-lg" name="username" placeholder="username" aria-label="Username" required autofocus>

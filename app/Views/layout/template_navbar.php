@@ -121,7 +121,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="/home/logout">
+          <a class="nav-link " href="/logout">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>

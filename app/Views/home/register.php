@@ -30,7 +30,7 @@
                                 </ul>
                             </div>
                         <?php endif; ?>
-                        <form role="form" action="<?= base_url('home/simpan') ?>" method="POST">
+                        <form role="form" action="<?= base_url('/register') ?>" method="POST">
                             <?= csrf_field() ?>
                             <div class="mb-3">
                                 <input type="text" class="form-control" name="nama_pemilik" placeholder="Nama Pemilik" aria-label="nama_pemilik" value="<?= old('nama_pemilik') ?>" required autofocus>

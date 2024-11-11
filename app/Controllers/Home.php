@@ -84,7 +84,7 @@ class Home extends BaseController
                 $ses_data = [
                     'username' => $user['username'],
                     'role' => $user['role'],
-                    'logged_in' => TRUE
+                    'logged_in' => true
                 ];
                 $session->set($ses_data);
                 if($user['role'] == 'administrator'){
