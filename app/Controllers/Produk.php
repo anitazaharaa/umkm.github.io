@@ -12,14 +12,18 @@ class Produk extends BaseController
 
         if (session()->get('role') == 'pelaku_umkm') {
             $produk = $this->produkModel->getProdukByUmkm($id_umkm);
+            $status = $this->umkmModel->getUmkmStatus($id_umkm)['status'];
         } else {
             $produk = $this->produkModel->getProdukWithKategori();
+            $status = '';
         }
+
+        // dd($this->umkmModel->getUmkmStatus($id_umkm));
 
         $data = [
             'title' => 'Produk UMKM | SiUMKM',
             'role' => session()->get('role'),
-            'status' => $produk,
+            'status' => $status,
             'navtitle' => 'Produk UMKM',
             'produk' => $this->produkModel->getProdukWithKategori(),
         ];

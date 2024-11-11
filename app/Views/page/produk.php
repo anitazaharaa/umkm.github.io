@@ -19,17 +19,32 @@
               <?php endif; ?>
             <div class="card-body px-0 pt-0 pb-2">
               
-              <div class="d-flex justify-content-<?= $role != "pelaku_umkm" ? "between" : "end" ?>">
-              <?php if ($status != "Belum Terverifikasi" && $role == "pelaku_umkm"): ?>
+              <?php if ($role == "administrator"  || $role == "petugas"): ?>
+                <div class="d-flex justify-content-end" ?>
+                  <form method="get" action="<?= base_url("/produk/cari") ?>" class="d-flex mt-2 text-end">
+                      <input type="text" class="form-control me-2" placeholder="Cari Produk" name="keyword" style="height: 38px;">
+                      <button class="btn btn-sm btn-info px-5" type="submit" style="margin-bottom: 0px; height: 38px;">Cari</button>
+                  </form>
+                </div>
+              <?php endif; ?>
+
+              <?php if ($role == "pelaku_umkm"): ?>
+                <div class="d-flex justify-content-<?= $status == "Terverifikasi" ? "between" : "end" ?>" ?>
+                  <?php if ($status == "Terverifikasi"): ?>
                   <a href="<?= base_url('/produk/tambah') ?>">
                     <button class="btn btn-success btn-sm mt-2">Tambah Produk</button>
                   </a>
+                  <?php endif; ?>
+
+                  <form method="get" action="<?= base_url("/produk/cari") ?>" class="d-flex mt-2 text-end">
+                      <input type="text" class="form-control me-2" placeholder="Cari Produk" name="keyword" style="height: 38px;">
+                      <button class="btn btn-sm btn-info px-5" type="submit" style="margin-bottom: 0px; height: 38px;">Cari</button>
+                  </form>
+                </div>
               <?php endif; ?>
-                <form method="get" action="<?= base_url("/produk/cari") ?>" class="d-flex mx-4 mt-2 text-end">
-                    <input type="text" class="form-control me-2" placeholder="Cari Produk" name="keyword" style="height: 38px;">
-                    <button class="btn btn-sm btn-info px-5" type="submit" style="margin-bottom: 0px; height: 38px;">Cari</button>
-                </form>
-              </div>
+                
+
+              
             </div>
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">

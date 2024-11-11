@@ -16,7 +16,7 @@
             return $this->where('status', $status)->countAllResults();
         }
 
-        public function getUmkmVerif($id)
+        public function getUmkmStatus($id)
         {
             return $this->select('tbl_umkm.status')
                         ->where(['tbl_umkm.id_umkm' => $id])
