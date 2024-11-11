@@ -50,10 +50,10 @@
                             <input type="text" class="form-control" value="<?= $umkm['updated_at'] ?>" id="nama_kategori" name="nama_kategori" disabled>
                         </div>
                         <div class="form-group text-end">
-                            <a href="<?= base_url('admin/umkm/ubah/' . $umkm['id_umkm']) ?>">
+                            <a href="<?= base_url('/umkm/ubah/' . $umkm['id_umkm']) ?>">
                                 <button class="btn btn-sm btn-primary">Ubah Data</button>
                             </a>
-                            <a href="<?= base_url('admin/umkm/hapus/' . $umkm['id_umkm'] . '/' . $umkm['id_pengguna']) ?>">
+                            <a href="<?= base_url('/umkm/hapus/' . $umkm['id_umkm'] . '/' . $umkm['id_pengguna']) ?>">
                                 <button class="btn btn-sm btn-danger hapusbtn">Hapus Data</button>
                             </a>
                         </div>

@@ -52,7 +52,7 @@ class Kategori extends BaseController
 
         session()->setFlashdata('success', 'Data berhasil disimpan!');
 
-        return redirect()->to('/page/kategori');
+        return redirect()->to('/kategori');
     }
 
     public function hapus($id)
@@ -62,7 +62,7 @@ class Kategori extends BaseController
 
         session()->setFlashdata('success', 'Data berhasil dihapus!');
 
-        return redirect()->to('/page/kategori');
+        return redirect()->to('/kategori');
     }
 
     public function edit($id)
@@ -88,7 +88,7 @@ class Kategori extends BaseController
 
         session()->setFlashdata('success', 'Data berhasil diubah!');
 
-        return redirect()->to('/page/kategori');
+        return redirect()->to('/kategori');
     }
 
 

@@ -96,7 +96,7 @@
             <div class="card-header pb-0 pt-3 bg-transparent">
               <h6 class="text-capitalize">Pendapatan UMKM Kabupaten Tasikmalaya</h6>
 
-              <form method="post" action="<?= $role == 'administrator' ? '/admin' : '/petugas' ?>">
+              <form method="post" action="<?= base_url('dashboard') ?>">
 
               <div class="row">
                 <div class="col-2">
@@ -157,7 +157,7 @@
                     </div>
                   </div>
                   <div class="d-flex">
-                    <a href="/admin/produk/<?= $k['id_kategori'] ?>">
+                    <a href="/produk/<?= $k['id_kategori'] ?>">
                       <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
                     </a>
                     

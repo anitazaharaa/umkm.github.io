@@ -28,10 +28,10 @@
                             <input type="date" class="form-control" id="tanggal_laporan" name="tanggal_laporan" value="<?= $laporan['tanggal_laporan'] ?>" disabled>
                       </div>
                       <div class="form-group text-end">
-                          <a href="/admin/laporan/ubah/<?= $laporan['id_laporan'] ?>"">
+                          <a href="/laporan/ubah/<?= $laporan['id_laporan'] ?>"">
                             <button class="btn btn-sm btn-primary">Ubah</button>
                           </a>
-                          <a href="/admin/laporan/hapus/<?= $laporan['id_laporan'] ?>" class="hapusbtn">
+                          <a href="/laporan/hapus/<?= $laporan['id_laporan'] ?>" class="hapusbtn">
                             <button class="btn btn-sm btn-danger">Hapus</button>
                           </a>
                       </div>

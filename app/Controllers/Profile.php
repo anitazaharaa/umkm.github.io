@@ -11,6 +11,7 @@ class Profile extends BaseController
 
         $data = [
             'title' => 'Profile Admin | SiUMKM',
+            'role' => $session->get('role'),
             'navtitle' => 'Profile',
             'profile' => $this->PenggunaModel->where('username', $session->get('username'))->first()
         ];
@@ -28,6 +29,10 @@ class Profile extends BaseController
             'role' => $this->request->getPost('role')
         ];
 
+        if ($this->request->getVar('password')) {
+            $data['password'] = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
+        }
+
         $this->PenggunaModel->update($this->request->getPost('id_pengguna'), $data);
 
         $ses_data = [
@@ -37,6 +42,6 @@ class Profile extends BaseController
                 ];
         $session->set($ses_data);
 
-        return redirect()->to('/page/profile')->with('success', 'Profile berhasil diubah');
+        return redirect()->to('/profile')->with('success', 'Profile berhasil diubah');
     }
 }

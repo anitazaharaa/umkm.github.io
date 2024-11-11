@@ -18,8 +18,8 @@
                 <?php endif; ?>
             </div>
             <div class="card-body">
-                <form action="/admin/updateprofile" method="POST">
-                <input type="hidden" name="id" value="<?= $profile['id_pengguna'] ?>">
+                <form action="<?= base_url("/profile") ?>" method="POST">
+                <input type="hidden" name="id_pengguna" value="<?= $profile['id_pengguna'] ?>">
                 <div class="form-group">
                     <label for="nama_pengguna">Nama</label>
                     <input type="text" class="form-control" name="nama_pengguna" value="<?= $profile['nama_pengguna'] ?>" id="nama_pengguna">
@@ -27,6 +27,15 @@
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" class="form-control" name="username" value="<?= $profile['username'] ?>" id="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                    <small class="form-text text-muted">Kosongkan jika tidak ingin mengubah password</small>
+                </div>
+                <div class="form-group">
+                    <label for="password_ulang">Ulangi Password</label>
+                    <input type="password" class="form-control" id="password_ulang" name="password_ulang">
                 </div>
                 <div class="form-group">
                        <label for="role">Role</label>

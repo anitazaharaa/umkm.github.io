@@ -9,10 +9,10 @@
             <h4>Data Laporan UMKM</h4>
 
             <div class="d-flex justify-content-between">
-              <a href="/admin/laporan/tambahpendapatan">
+              <a href="<?= base_url("laporan/tambah") ?>">
                 <button class="btn btn-success btn-sm my-3">Tambah Laporan Pendapatan UMKM</button>
               </a>
-              <a href="/admin/laporan/tambahpendapatan">
+              <a href="<?= base_url("laporan/cetak") ?>">
                 <button class="btn btn-primary btn-sm my-3">Cetak Laporan Pendapatan UMKM Tahunan</button>
               </a>
             </div>
@@ -30,6 +30,7 @@
                   <tr>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder">No</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Nama Laporan</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Periode</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Tanggal Dibuat</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Tanggal Diubah</th>
                     <th class="text-secondary"></th>
@@ -55,6 +56,13 @@
                                 <td>
                                     <div class="d-flex px-2 py-1">
                                         <div class="d-flex flex-column justify-content-center">
+                                            <h4 class="mb-0 text-sm"><?= date('F Y', strtotime($item['tanggal_laporan'])) ?></h4>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex px-2 py-1">
+                                        <div class="d-flex flex-column justify-content-center">
                                             <h4 class="mb-0 text-sm"><?= date('d F Y', strtotime($item['created_at'])) ?></h4>
                                         </div>
                                     </div>
@@ -67,7 +75,7 @@
                                     </div>
                                 </td>
                                 <td class="align-middle mb-0">
-                                    <a href="/admin/laporan/detail/<?= $item['id_laporan']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="/laporan/detail/<?= $item['id_laporan']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         <button class="btn btn-info btn-sm" style="margin: 0;">Detail</button>
                                     </a>
                                 </td>

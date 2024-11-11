@@ -16,10 +16,10 @@
               <?php endif; ?>
 
             <div class="d-flex justify-content-between">
-              <a href="/admin/user/tambah">
-                <button class="btn btn-success btn-sm mx-4 mt-2">Tambah Kategori</button>
+              <a href="<?= base_url("/users/tambah") ?>">
+                <button class="btn btn-success btn-sm mx-4 mt-2">Tambah Pengguna</button>
               </a>
-              <form method="get" action="/admin/user/cari" class="d-flex mx-4 mt-2">
+              <form method="get" action="<?= base_url("/users/cari") ?>" class="d-flex mx-4 mt-2">
                 <input type="text" class="form-control me-2" placeholder="Cari User" name="keyword" style="height: 38px;">
                 <button class="btn btn-sm btn-info px-5" type="submit" style="margin-bottom: 0px; height: 38px;">Cari</button>
               </form>
@@ -71,10 +71,10 @@
                                     </div>
                                 </td>
                                 <td class="align-middle mb-0">
-                                    <a href="/admin/user/ubah/<?= $item['id_pengguna']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="<?= base_url("users/ubah/{$item['id_pengguna']}") ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         <button class="btn btn-primary btn-sm" style="margin: 0;">Edit</button>
                                     </a>
-                                    <a href="/admin/user/hapus/<?= $item['id_pengguna']?>" class="text-secondary font-weight-bold text-xs hapusbtn" data-toggle="tooltip" data-original-title="Delete user">
+                                    <a href="<?= base_url("users/hapus/{$item['id_pengguna']}") ?>" class="text-secondary font-weight-bold text-xs hapusbtn" data-toggle="tooltip" data-original-title="Delete user">
                                         <button class="btn btn-danger btn-sm" style="margin: 0;">Hapus</button>
                                     </a>
                                 </td>

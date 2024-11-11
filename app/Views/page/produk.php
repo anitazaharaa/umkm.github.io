@@ -16,7 +16,7 @@
               <?php endif; ?>
 
               <div class="d-flex justify-content-end">
-                <form method="get" action="/admin/produk/cari" class="d-flex mx-4 mt-2">
+                <form method="get" action="<?= base_url("/produk/cari") ?>" class="d-flex mx-4 mt-2">
                   <input type="text" class="form-control me-2" placeholder="Cari Produk" name="keyword" style="height: 38px;">
                   <button class="btn btn-sm btn-info px-5" type="submit" style="margin-bottom: 0px; height: 38px;">Cari</button>
                 </form>
@@ -75,7 +75,7 @@
                                     </div>
                                 </td>
                                 <td class="align-middle mb-0">
-                                    <a href="/admin/produk/detail/<?= $item['id_produk']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="/produk/detail/<?= $item['id_produk']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         <button class="btn btn-info btn-sm" style="margin: 0;">Detail</button>
                                     </a>
                                 </td>

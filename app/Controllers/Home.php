@@ -6,6 +6,10 @@ class Home extends BaseController
 {
     public function index()
     {
+        if (session()->get('logged_in')) {
+            return redirect()->to('/dashboard');
+        }
+
         $data = [
             'title' => 'Home | SiUMKM'
         ];
@@ -13,8 +17,13 @@ class Home extends BaseController
         return view('home/login', $data);
     }
 
-    public function register(): string
+    public function register()
     {
+
+        if (session()->get('logged_in')) {
+            return redirect()->to('/dashboard');
+        }
+
         $data = [
             'title' => 'Register | SiUMKM',
         ];
@@ -87,20 +96,16 @@ class Home extends BaseController
                     'logged_in' => true
                 ];
                 $session->set($ses_data);
-                if($user['role'] == 'administrator'){
-                    return redirect()->to('/admin');
-                } else if($user['role'] == 'petugas'){
-                    return redirect()->to('/petugas');
-                } else {
-                    return redirect()->to('/umkm');
-                }
+                
+                return redirect()->to('/dashboard');
+                
             } else {
                 $session->setFlashdata('error', 'Password salah.');
-                return redirect()->to('/');
+                return redirect()->to('/login');
             }
         } else {
             $session->setFlashdata('error', 'Username tidak ditemukan.');
-            return redirect()->to('/');
+            return redirect()->to('/login');
         }
     }
 

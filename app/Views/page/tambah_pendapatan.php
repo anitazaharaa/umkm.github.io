@@ -12,7 +12,7 @@
           </div>
           <div class="card-body px-0 pt-0 pb-2 mt-3 mx-2">
               <div class="container">
-                  <form action="/admin/laporan/simpan" method="post">
+                  <form action="<?= base_url("laporan/simpan") ?>" method="post">
                       <?= csrf_field() ?>
                       <div class="form-group">
                             <label for="tanggal_laporan">Tanggal Laporan</label>

@@ -9,6 +9,7 @@ class Umkm extends BaseController
     {
         $data = [
             'title' => 'Data UMKM | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Data UMKM',
             'umkm' => $this->umkmModel->findAll()
         ];
@@ -33,6 +34,7 @@ class Umkm extends BaseController
     {
         $data = [
             'title' => 'Detail UMKM | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Data UMKM',
             'umkm' => $this->umkmModel->find($id)
         ];
@@ -44,6 +46,7 @@ class Umkm extends BaseController
     {
         $data = [
             'title' => 'Ubah UMKM | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Data UMKM',
             'umkm' => $this->umkmModel->find($id)
         ];
@@ -67,7 +70,7 @@ class Umkm extends BaseController
 
         session()->setFlashdata('success', 'Data berhasil disimpan!');
 
-        return redirect()->to('/page/umkm/detail/' . $id);
+        return redirect()->to('/umkm/detail/' . $id);
     }
 
     public function hapus($id_umkm, $id_pengguna)
@@ -79,6 +82,6 @@ class Umkm extends BaseController
 
         session()->setFlashdata('success', 'Data berhasil dihapus!');
 
-        return redirect()->to('/page/umkm');
+        return redirect()->to('/umkm');
     }
 }

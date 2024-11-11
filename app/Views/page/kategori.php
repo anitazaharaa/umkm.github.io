@@ -18,10 +18,10 @@
             
 
             <div class="d-flex justify-content-between">
-              <a href="/admin/kategori/tambah">
+              <a href="/kategori/tambah">
                 <button class="btn btn-success btn-sm mx-4 mt-2">Tambah Kategori</button>
               </a>
-              <form method="get" action="/admin/kategori/cari" class="d-flex mx-4 mt-2">
+              <form method="get" action="<?= base_url('kategori/cari') ?>" class="d-flex mx-4 mt-2">
                 <input type="text" class="form-control me-2" placeholder="Cari Kategori" name="keyword" style="height: 38px;">
                 <button class="btn btn-sm btn-info px-5" type="submit" style="margin-bottom: 0px; height: 38px;">Cari</button>
               </form>
@@ -56,10 +56,10 @@
                                     </div>
                                 </td>
                                 <td class="align-middle mb-0">
-                                    <a href="/admin/kategori/ubah/<?= $item['id_kategori']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="/kategori/ubah/<?= $item['id_kategori']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         <button class="btn btn-primary btn-sm" style="margin: 0;">Edit</button>
                                     </a>
-                                    <a href="/admin/kategori/hapus/<?= $item['id_kategori']?>" class="text-secondary font-weight-bold text-xs hapusbtn" data-toggle="tooltip" data-original-title="Delete user">
+                                    <a href="/kategori/hapus/<?= $item['id_kategori']?>" class="text-secondary font-weight-bold text-xs hapusbtn" data-toggle="tooltip" data-original-title="Delete user">
                                         <button class="btn btn-danger btn-sm" style="margin: 0;">Hapus</button>
                                     </a>
                                 </td>

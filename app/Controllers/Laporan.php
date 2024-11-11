@@ -13,6 +13,7 @@ class Laporan extends BaseController
 
         $data = [
             'title' => 'Laporan UMKM | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Laporan UMKM',
             'laporan' => $this->laporanModel->orderBy('tanggal_laporan', 'ASC')->findAll(),
         ];
@@ -24,6 +25,7 @@ class Laporan extends BaseController
     {
         $data = [
             'title' => 'Tambah Laporan Pendapatan UMKM | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Laporan UMKM',
         ];
 
@@ -70,7 +72,7 @@ class Laporan extends BaseController
         $this->laporanModel->insert($dataLaporan);
         $this->pendapatanModel->insertBatch($batchData);
 
-        return redirect()->to('/page/laporan')->with('success', 'Data pendapatan berhasil disimpan');
+        return redirect()->to('/laporan')->with('success', 'Data pendapatan berhasil disimpan');
     }
 
     public function detail($id)
@@ -81,6 +83,7 @@ class Laporan extends BaseController
 
         $data = [
             'title' => 'Detail Laporan Pendapatan UMKM | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Laporan UMKM',
             'laporan' => $laporan,
             'pendapatan' => $pendapatan,
@@ -95,7 +98,7 @@ class Laporan extends BaseController
         $this->pendapatanModel->where('id_laporan', $id)->delete();
         $this->laporanModel->delete($id);
 
-        return redirect()->to('/page/laporan')->with('success', 'Data pendapatan berhasil dihapus');
+        return redirect()->to('/laporan')->with('success', 'Data pendapatan berhasil dihapus');
     }
 
     public function ubah($id)
@@ -106,6 +109,7 @@ class Laporan extends BaseController
 
         $data = [
             'title' => 'Ubah Laporan Pendapatan UMKM | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Laporan UMKM',
             'laporan' => $laporan,
             'pendapatan' => $pendapatan,
@@ -135,6 +139,7 @@ class Laporan extends BaseController
             $batchData[] = [
                 'id_pendapatan' => $this->pendapatanModel->where('id_laporan', $idLaporan)->where('nama_kecamatan', $kecamatan)->first()['id_pendapatan'],
                 'jumlah_pendapatan' => $this->request->getPost($kecamatan),
+                'periode' => date('Y-m-d', strtotime($tanggalLaporan))
             ];
         }
 
@@ -142,7 +147,7 @@ class Laporan extends BaseController
 
         $this->pendapatanModel->updateBatch($batchData, 'id_pendapatan');
 
-        return redirect()->to('/page/laporan/detail/' . $idLaporan)->with('success', 'Data laporan berhasil diubah');
+        return redirect()->to('/laporan/detail/' . $idLaporan)->with('success', 'Data laporan berhasil diubah');
     }
 
 }

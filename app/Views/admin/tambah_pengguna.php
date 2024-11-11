@@ -21,7 +21,7 @@
                                 </ul>
                             </div>
                         <?php endif; ?>
-                    <form action="/admin/user/simpan" method="post">
+                    <form action="<?= base_url("/users/simpan") ?>" method="post">
                         <?= csrf_field() ?>
                         <div class="form-group">
                             <label for="nama_pengguna">Nama Pengguna</label>

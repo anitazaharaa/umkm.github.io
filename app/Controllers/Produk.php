@@ -10,6 +10,7 @@ class Produk extends BaseController
 
         $data = [
             'title' => 'Produk UMKM | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Produk UMKM',
             'produk' => $this->produkModel->getProdukWithKategori(),
         ];
@@ -35,6 +36,7 @@ class Produk extends BaseController
 
         $data = [
             'title' => 'Produk UMKM | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Produk UMKM',
             'produk' => $this->produkModel->getProdukByKategori($id_kategori),
         ];
@@ -47,6 +49,7 @@ class Produk extends BaseController
 
         $data = [
             'title' => 'Detail Produk | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Produk UMKM',
             'produk' => $this->produkModel->getProdukDetail($id_produk),
         ];
@@ -61,7 +64,7 @@ class Produk extends BaseController
 
         session()->setFlashdata('success', 'Data berhasil dihapus!');
 
-        return redirect()->to('/page/produk');
+        return redirect()->to('/produk');
     }
 
 

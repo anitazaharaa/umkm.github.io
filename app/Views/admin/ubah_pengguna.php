@@ -11,9 +11,9 @@
                 </div>
                 <div class="card-body px-0 pt-0 pb-2 mt-3 mx-2">
                         <div class="container">
-                                <form action="/admin/user/update" method="post">
+                                <form action="<?= base_url("users/update") ?>" method="post">
                                         <?= csrf_field() ?>
-                                        <input type="hidden" name="id" value="<?= $pengguna['id'] ?>">
+                                        <input type="hidden" name="id_pengguna" value="<?= $pengguna['id_pengguna'] ?>">
                                         <div class="form-group">
                                                 <label for="nama_pengguna">Nama Pengguna</label>
                                                 <input type="text" class="form-control" id="nama_pengguna" name="nama_pengguna" value="<?= $pengguna['nama_pengguna'] ?>" required autofocus>
