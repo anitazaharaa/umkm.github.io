@@ -37,6 +37,8 @@ $routes->get('/produk', 'Produk::index');
 $routes->get('/produk/cari', 'Produk::cari');
 $routes->get('/produk/tambah', 'Produk::tambah');
 $routes->post('/produk/simpan', 'Produk::simpan');
+$routes->get('/produk/ubah/(:num)', 'Produk::ubah/$1');
+$routes->post('/produk/update', 'Produk::update');
 $routes->get('/produk/(:num)', 'Produk::kategori/$1');
 $routes->get('/produk/detail/(:num)', 'Produk::detail/$1');
 $routes->get('/produk/hapus/(:num)', 'Produk::hapus/$1');

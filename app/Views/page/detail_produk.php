@@ -65,6 +65,9 @@
               </div>
               <hr class="horizontal dark">
               <div class="form-group text-end">
+                <a href="/produk/ubah/<?= $produk['id_produk'] ?>">
+                  <button class="btn btn-primary btn-sm text-end">Ubah</button>
+                </a>
                 <a href="/produk/hapus/<?= $produk['id_produk'] ?>" class="hapusbtn">
                   <button class="btn btn-danger btn-sm text-end">Hapus</button>
                 </a>
@@ -75,7 +78,7 @@
         <div class="col-md-4">
           <div class="card card-profile p-3">
             <h4>Foto Produk</h4>
-            <img src="/img/produk/ayamtaliwang.jpg" alt="Image placeholder" class="card-img-top mt-2">           
+            <img src="/img/uploads/<?= $produk['foto_produk'] ?>" alt="Image placeholder" class="card-img-top mt-2">           
           </div>
         </div>
       </div>

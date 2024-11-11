@@ -19,8 +19,8 @@
               <?php endif; ?>
             <div class="card-body px-0 pt-0 pb-2">
               
-              <div class="d-flex justify-content-<?= $status != "Terverifikasi" ? "end" : "between" ?>">
-              <?php if ($status != "Belum Terverifikasi"): ?>
+              <div class="d-flex justify-content-<?= $role != "pelaku_umkm" ? "between" : "end" ?>">
+              <?php if ($status != "Belum Terverifikasi" && $role == "pelaku_umkm"): ?>
                   <a href="<?= base_url('/produk/tambah') ?>">
                     <button class="btn btn-success btn-sm mt-2">Tambah Produk</button>
                   </a>

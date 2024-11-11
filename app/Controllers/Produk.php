@@ -19,7 +19,7 @@ class Produk extends BaseController
         $data = [
             'title' => 'Produk UMKM | SiUMKM',
             'role' => session()->get('role'),
-            'status' => $this->umkmModel->getUmkmVerif($id_umkm)['status'],
+            'status' => $produk,
             'navtitle' => 'Produk UMKM',
             'produk' => $this->produkModel->getProdukWithKategori(),
         ];
@@ -33,7 +33,7 @@ class Produk extends BaseController
         $id_umkm = session()->get('id_umkm');
 
         if (session()->get('role') == 'pelaku_umkm') {
-            $produk = $this->produkModel->getProdukByUmkm($id_umkm);
+            $produk = $this->produkModel->getProdukByUmkm($id_umkm)['status'];
         } else {
             $produk = $this->produkModel->getProdukWithKategori();
         }
@@ -42,7 +42,7 @@ class Produk extends BaseController
             'title' => 'Produk UMKM | SiUMKM',
             'navtitle' => 'Produk UMKM',
             'role' => session()->get('role'),
-            'status' => $this->umkmModel->getUmkmVerif($id_umkm)['status'],
+            'status' => $produk,
             'produk' => $this->produkModel->searchProduk($keyword),
         ];
 
@@ -89,6 +89,47 @@ class Produk extends BaseController
         return redirect()->to('/produk');
     }
 
+    public function ubah($id_produk)
+    {
+        $data = [
+            'title' => 'Ubah Produk | SiUMKM',
+            'role' => session()->get('role'),
+            'navtitle' => 'Produk UMKM',
+            'produk' => $this->produkModel->getProdukDetail($id_produk),
+            'kategori' => $this->kategoriModel->findAll(),
+        ];
+
+        return view('/page/ubah_produk', $data);
+    }
+
+    public function update()
+    {
+        $id_produk = $this->request->getVar('id_produk');
+        $foto_lama = $this->request->getVar('foto_produk_lama');
+
+        $file = $this->request->getFile('foto_produk');
+        if ($file->isValid() && !$file->hasMoved()) {
+            unlink('img/uploads/' . $foto_lama);
+            $newName = $file->getRandomName();
+            $file->move('img/uploads', $newName);
+            $gambar = $newName;
+        } else {
+            $gambar = $foto_lama;
+        }
+
+        $this->produkModel->update($id_produk, [
+            'nama_produk' => $this->request->getVar('nama_produk'),
+            'harga' => $this->request->getVar('harga'),
+            'deskripsi' => $this->request->getVar('deskripsi'),
+            'id_kategori' => $this->request->getVar('id_kategori'),
+            'foto_produk' => $gambar,
+        ]);
+
+        session()->setFlashdata('success', 'Data berhasil diubah!');
+
+        return redirect()->to('/produk');
+    }
+
     public function kategori($id_kategori)
     {
 
@@ -118,9 +159,17 @@ class Produk extends BaseController
     public function hapus($id_produk)
     {
 
-        $this->produkModel->delete($id_produk);
-
-        session()->setFlashdata('success', 'Data berhasil dihapus!');
+        $produk = $this->produkModel->find($id_produk);
+        if ($produk) {
+            $foto_produk = $produk['foto_produk'];
+            if ($foto_produk != 'default.png' && file_exists('img/uploads/' . $foto_produk)) {
+            unlink('img/uploads/' . $foto_produk);
+            }
+            $this->produkModel->delete($id_produk);
+            session()->setFlashdata('success', 'Data berhasil dihapus!');
+        } else {
+            session()->setFlashdata('error', 'Produk tidak ditemukan!');
+        }
 
         return redirect()->to('/produk');
     }

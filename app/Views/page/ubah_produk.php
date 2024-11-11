@@ -2,86 +2,72 @@
 
 <?= $this->section('content') ?>
 
-
-  <div class="container-fluid py-4">
+<div class="container-fluid py-4">
     <div class="row">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header pb-0">
-            <div class="d-flex align-items-center">
-              <p class="mb-0">Detail Produk</p>
-            </div>
-          </div>
-          <div class="card-body">
-              <div class="form-group">
-                  <label for="nama_produk">Nama Produk</label>
-                  <input type="text" class="form-control" value="<?= $produk['nama_produk'] ?>" id="nama_produk" disabled >
-              </div>
-              <div class="form-group">
-                  <label for="nama_kategori">Kategori</label>
-                  <input type="text" class="form-control" value="<?= $produk['nama_kategori'] ?>" id="nama_kategori" disabled >
-              </div>
-              <div class="form-group">
-                  <label for="harga">Harga</label>
-                  <input type="text" class="form-control" value="<?= 'Rp. ' . $produk['harga'] ?>" id="harga" disabled >
-              </div>
-              <div class="form-group">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Dibuat</label>
-                    <input class="form-control" type="text" value="<?= $produk['created_at'] ?>" disabled>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Terakhir diubah</label>
-                    <input class="form-control" type="text" value="<?= $produk['updated_at'] ?>" disabled>
-                  </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <form action="<?= base_url('produk/update') ?>" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="id_produk" value="<?= $produk['id_produk'] ?>">
+                        <input type="hidden" name="foto_produk_lama" value="<?= $produk['foto_produk'] ?>">
+                        <div class="form-group">
+                            <label for="nama_produk">Nama Produk</label>
+                            <input type="text" class="form-control" name="nama_produk" value="<?= $produk['nama_produk'] ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="kategori">Kategori</label>
+                            <select class="form-control" name="id_kategori" required>
+                                <option value="">---Pilih Kategori----</option>
+                                <?php foreach ($kategori as $kat): ?>
+                                    <option value="<?= $kat['id_kategori']; ?>" <?= $kat['id_kategori'] == $produk['id_kategori'] ? 'selected' : ''; ?>><?= $kat['nama_kategori']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="harga">Harga</label>
+                            <input type="number" class="form-control" name="harga" value="<?= $produk['harga'] ?>" required>
+                        </div>
+                        
+                        <div class="form-group text-end">
+                            <button type="submit" class="btn btn-sm btn-success">Simpan</button>
+                        </div>
+                    
                 </div>
             </div>
-              </div>
-            <hr class="horizontal dark">
-            <p class="text-uppercase text-sm">Informasi Pemilik UMKM</p>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="example-text-input" class="form-control-label">Nama Pemilik</label>
-                  <input class="form-control" type="text" value="<?= $produk['nama_pemilik'] ?>" disabled>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="example-text-input" class="form-control-label">Alamat</label>
-                  <input class="form-control" type="text" value="<?= $produk['alamat_umkm'] ?>" disabled>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="example-text-input" class="form-control-label">No HP</label>
-                  <input class="form-control" type="text" value="<?= $produk['no_hp'] ?>" disabled>
-                </div>
-              </div>
-            </div>
-            <hr class="horizontal dark">
-            
-          </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-profile p-3">
-          <h4>Foto Produk</h4>
-          <img src="/img/produk/ayamtaliwang.jpg" alt="Image placeholder" class="card-img-top mt-3">
-
-          <div class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3">
-            <div class="d-flex justify-content-between">
-              <a href="javascript:;" class="btn btn-sm btn-info mb-0 d-none d-lg-block">Connect</a>
-              <a href="javascript:;" class="btn btn-sm btn-dark float-right mb-0 d-none d-lg-block">Message</a>
+        <div class="col-md-4">
+            <div class="card card-profile p-3">
+                <div class="form-group">
+                            <img id="imagePreview" src="/img/uploads/<?= $produk['foto_produk'] ?>" alt="Image Preview" style="display: block; max-width: 100%; height: auto;">
+                        </div>
+                <div class="form-group">
+                            <label for="foto_produk">Foto Produk</label>
+                            <input type="file" class="form-control" name="foto_produk" id="foto_produk" accept="image/*" onchange="previewImage(event)">
+                </div>
+                </form>       
             </div>
-          </div>
-          
         </div>
-      </div>
     </div>
-  </div>
+</div>
+
+<?= $this->endSection() ?>
+
+<?= $this->section('sweetalert') ?>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="/js/hapusalert.js"></script>
+
+<script>
+function previewImage(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+        var output = document.getElementById('imagePreview');
+        output.src = reader.result;
+        output.style.display = 'block';
+    };
+    reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+
 <?= $this->endSection() ?>
