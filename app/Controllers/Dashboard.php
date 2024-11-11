@@ -27,6 +27,8 @@ class Dashboard extends BaseController
             $data['title'] = 'Dashboard Admin | SiUMKM';
         } else if ($session->get('role') == 'petugas') {
             $data['title'] = 'Dashboard Petugas | SiUMKM';
+        } else {
+            $data['title'] = 'Dashboard | SiUMKM';
         }
 
         $data['umkm'] = [

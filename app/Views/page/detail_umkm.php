@@ -49,6 +49,15 @@
                             <label for="nama_kategori">Terakhir Update</label>
                             <input type="text" class="form-control" value="<?= $umkm['updated_at'] ?>" id="nama_kategori" name="nama_kategori" disabled>
                         </div>
+                        <div class="d-flex justify-content-between">
+
+                        <a href="<?= base_url("umkm/verifikasi/") . $umkm['id_umkm'] ?>">
+                        <?php if ($umkm['status'] == 'Belum Terverifikasi'): ?>
+                            <button class="btn btn-info btn-sm">Verifikasi UMKM</button>
+                        <?php else: ?>
+                            <button class="btn btn-danger btn-sm">Batalkan Verifikasi</button>
+                          </a>
+                        <?php endif; ?>
                         <div class="form-group text-end">
                             <a href="<?= base_url('/umkm/ubah/' . $umkm['id_umkm']) ?>">
                                 <button class="btn btn-sm btn-primary">Ubah Data</button>
@@ -57,6 +66,8 @@
                                 <button class="btn btn-sm btn-danger hapusbtn">Hapus Data</button>
                             </a>
                         </div>
+                      </div>
+                        
                 </div>   
             </div>
         </div>

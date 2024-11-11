@@ -41,38 +41,41 @@
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
-        <li class="nav-item">
+
+        <?php if ($role == 'administrator' || $role == 'petugas'): ?>
+          <li class="nav-item">
             <a class="nav-link <?= ($navtitle == 'Kategori') ? 'active' : '' ?>" href="/kategori">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-tag text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Kategori</span>
-          </a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link <?= ($navtitle == 'Data UMKM') ? 'active' : '' ?>" href="/umkm">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-shop text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Data UMKM</span>
-          </a>
-        </li>
-        <li class="nav-item ">
-        <a class="nav-link <?= ($navtitle == 'Produk UMKM') ? 'active' : '' ?>" href="/produk">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-app text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Produk UMKM</span>
-          </a>
-        </li>
-        <li class="nav-item">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-tag text-dark text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Kategori</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?= ($navtitle == 'Data UMKM') ? 'active' : '' ?>" href="/umkm">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-shop text-dark text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Data UMKM</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?= ($navtitle == 'Produk UMKM') ? 'active' : '' ?>" href="/produk">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-app text-dark text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Produk UMKM</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link <?= ($navtitle == 'Laporan UMKM') ? 'active' : '' ?>" href="/laporan">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-paper-diploma text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Laporan UMKM</span>
-          </a>
-        </li>
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-paper-diploma text-dark text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Laporan UMKM</span>
+            </a>
+          </li>
+        <?php endif; ?>
 
         <?php if ($role == 'administrator'): ?>
           <li class="nav-item">
@@ -85,6 +88,17 @@
           </li>
         <?php endif; ?>
 
+        <?php if ($role == 'pelaku_umkm'): ?>
+        <li class="nav-item">
+            <a class="nav-link <?= ($navtitle == 'Produk UMKM') ? 'active' : '' ?>" href="/produk">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-app text-dark text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Produk</span>
+            </a>
+          </li>
+          <?php endif; ?>
+          
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account</h6>
         </li>

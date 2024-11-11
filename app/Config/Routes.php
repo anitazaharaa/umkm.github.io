@@ -28,12 +28,15 @@ $routes->post('/kategori/update', 'Kategori::update');
 $routes->get('/umkm', 'Umkm::index');
 $routes->get('/umkm/cari', 'Umkm::cari');
 $routes->get('/umkm/detail/(:num)', 'Umkm::detail/$1');
+$routes->get('/umkm/verifikasi/(:num)', 'Umkm::verifikasi/$1');
 $routes->get('/umkm/ubah/(:num)', 'Umkm::ubah/$1');
 $routes->post('/umkm/update', 'Umkm::update');
 $routes->get('/umkm/hapus/(:num)/(:any)', 'Umkm::hapus/$1/$2');
 
 $routes->get('/produk', 'Produk::index');
 $routes->get('/produk/cari', 'Produk::cari');
+$routes->get('/produk/tambah', 'Produk::tambah');
+$routes->post('/produk/simpan', 'Produk::simpan');
 $routes->get('/produk/(:num)', 'Produk::kategori/$1');
 $routes->get('/produk/detail/(:num)', 'Produk::detail/$1');
 $routes->get('/produk/hapus/(:num)', 'Produk::hapus/$1');

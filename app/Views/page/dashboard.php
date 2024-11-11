@@ -3,70 +3,97 @@
   <?= $this->section('content') ?>
 
 <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+      <?php if($role == 'administrator' || $role == 'petugas'): ?>
+        <div class="row">
+          <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+          <div class="card-body p-3">
+            <div class="row">
+              <div class="col-8">
+            <div class="numbers">
+              <p class="text-sm mb-0 text-uppercase font-weight-bold mb-2">UMKM Yang Terverifikasi</p>
+              <h5 class="font-weight-bolder">
+              <?= $umkm['verif'] ?>
+              </h5>
+            </div>
+              </div>
+              <div class="col-4 text-end">
+            <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+              <i class="ni ni-shop text-lg opacity-10" aria-hidden="true"></i>
+            </div>
+              </div>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+          <div class="card-body p-3">
+            <div class="row">
+              <div class="col-9">
+            <div class="numbers">
+              <p class="text-sm mb-0 text-uppercase font-weight-bold mb-2">UMKM Yang Belum Terverifikasi</p>
+              <h5 class="font-weight-bolder">
+              <?= $umkm['nonverif'] ?>
+              </h5>
+            </div>
+              </div>
+              <div class="col-3 text-end">
+            <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
+              <i class="ni ni-shop text-lg opacity-10" aria-hidden="true"></i>
+            </div>
+              </div>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+          <div class="card-body p-3">
+            <div class="row">
+              <div class="col-8">
+            <div class="numbers">
+              <p class="text-sm mb-0 text-uppercase font-weight-bold mb-2">UMKM Yang Terdaftar</p>
+              <h5 class="font-weight-bolder">
+              <?= $umkm['total'] ?>
+              </h5>
+            </div>
+              </div>
+              <div class="col-4 text-end">
+            <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
+              <i class="ni ni-basket text-lg opacity-10" aria-hidden="true"></i>
+            </div>
+              </div>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6">
           <div class="card">
             <div class="card-body p-3">
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold mb-2">UMKM Yang Terverifikasi</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold mb-2">Produk</p>
                     <h5 class="font-weight-bolder">
-                    <?= $umkm['verif'] ?>
+                      <?= $total_produk ?>
                     </h5>
                   </div>
                 </div>
                 <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                    <i class="ni ni-shop text-lg opacity-10" aria-hidden="true"></i>
+                  <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
+                    <i class="ni ni-app text-lg opacity-10" aria-hidden="true"></i>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-9">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold mb-2">UMKM Yang Belum Terverifikasi</p>
-                    <h5 class="font-weight-bolder">
-                    <?= $umkm['nonverif'] ?>
-                    </h5>
-                  </div>
-                </div>
-                <div class="col-3 text-end">
-                  <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
-                    <i class="ni ni-shop text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold mb-2">UMKM Yang Terdaftar</p>
-                    <h5 class="font-weight-bolder">
-                    <?= $umkm['total'] ?>
-                    </h5>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-                    <i class="ni ni-basket text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <?php endif; ?>
+
+        
+      <?php if($role == 'pelaku_umkm'): ?>
         <div class="col-xl-3 col-sm-6">
           <div class="card">
             <div class="card-body p-3">
@@ -88,7 +115,9 @@
             </div>
           </div>
         </div>
-      </div>
+        <?php endif; ?>
+
+     
 
       <div class="row mt-4">
         <div class="col-lg-12 mb-lg-0 mb-4">

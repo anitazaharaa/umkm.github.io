@@ -39,12 +39,21 @@
         {
             return $this->select('tbl_produk.*, tbl_kategori.nama_kategori')
                         ->join('tbl_kategori', 'tbl_kategori.id_kategori = tbl_produk.id_kategori')
+                        ->groupStart()
                         ->like('nama_produk', $keyword)
+                        ->orLike('tbl_kategori.nama_kategori', $keyword)
+                        ->orLike('harga', $keyword)
+                        ->orLike('foto_produk', $keyword)
+                        ->groupEnd()
+                        ->findAll();
+        }  
+        
+        public function getProdukByUmkm($id)
+        {
+            return $this->select('tbl_produk.*, tbl_kategori.nama_kategori')
+                        ->join('tbl_kategori', 'tbl_kategori.id_kategori = tbl_produk.id_kategori')
+                        ->where(['tbl_produk.id_umkm' => $id])
                         ->findAll();
         }
-
-
-    
     }
-
 ?>

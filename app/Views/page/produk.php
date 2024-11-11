@@ -7,18 +7,27 @@
           <div class="card mb-3">
             <div class="card-header pb-0">
               <h4>Data Produk</h4>
-
-            <div class="card-body px-0 pt-0 pb-2">
-               <?php if (session()->getFlashdata('success')): ?>
+              <?php if (session()->getFlashdata('success')): ?>
                  <div class="alert alert-success text-white">
                    <?= session()->getFlashdata('success') ?>
                  </div>
               <?php endif; ?>
-
-              <div class="d-flex justify-content-end">
-                <form method="get" action="<?= base_url("/produk/cari") ?>" class="d-flex mx-4 mt-2">
-                  <input type="text" class="form-control me-2" placeholder="Cari Produk" name="keyword" style="height: 38px;">
-                  <button class="btn btn-sm btn-info px-5" type="submit" style="margin-bottom: 0px; height: 38px;">Cari</button>
+              <?php if ($status == "Belum Terverifikasi"): ?>
+                <div class="alert alert-warning text-white text-center">
+                  UMKM ini belum Terverifikasi
+                </div>
+              <?php endif; ?>
+            <div class="card-body px-0 pt-0 pb-2">
+              
+              <div class="d-flex justify-content-<?= $status != "Terverifikasi" ? "end" : "between" ?>">
+              <?php if ($status != "Belum Terverifikasi"): ?>
+                  <a href="<?= base_url('/produk/tambah') ?>">
+                    <button class="btn btn-success btn-sm mt-2">Tambah Produk</button>
+                  </a>
+              <?php endif; ?>
+                <form method="get" action="<?= base_url("/produk/cari") ?>" class="d-flex mx-4 mt-2 text-end">
+                    <input type="text" class="form-control me-2" placeholder="Cari Produk" name="keyword" style="height: 38px;">
+                    <button class="btn btn-sm btn-info px-5" type="submit" style="margin-bottom: 0px; height: 38px;">Cari</button>
                 </form>
               </div>
             </div>
@@ -48,7 +57,7 @@
                                 <td>
                                     <div class="d-flex px-2 py-1">
                                         <div class="d-flex flex-column justify-content-center">
-                                            <img src="/img/produk/ayamtaliwang.jpg" alt="<?= $item['nama_produk'] ?>" class="img-fluid rounded" style="max-width: 100px;">
+                                            <img src="/img/uploads/<?= $item['foto_produk'] ?>" alt="<?= $item['nama_produk'] ?>" class="img-fluid rounded" style="max-width: 100px;">
                             
                                         </div>
                                     </div>

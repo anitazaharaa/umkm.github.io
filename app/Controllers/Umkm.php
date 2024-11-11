@@ -22,10 +22,16 @@ class Umkm extends BaseController
 
         $data = [
             'title' => 'Data UMKM | SiUMKM',
+            'role' => session()->get('role'),
             'navtitle' => 'Data UMKM',
-            'umkm' => $this->umkmModel->like('nama_pemilik', $keyword)->findAll()
+            'umkm' => $this->umkmModel->like('nama_pemilik', $keyword)
+                                        ->orLike('NIK', $keyword)
+                                        ->orLike('email', $keyword)
+                                        ->orLike('no_hp', $keyword)
+                                        ->orLike('alamat_umkm', $keyword)
+                                        ->orLike('status', $keyword)
+                                        ->findAll()
         ];
-
         return view('/page/umkm', $data);
     }
 
@@ -40,6 +46,21 @@ class Umkm extends BaseController
         ];
 
         return view('/page/detail_umkm', $data);
+    }
+
+    public function verifikasi($id)
+    {
+        $umkm = $this->umkmModel->find($id);
+
+        if ($umkm['status'] == 'Belum Terverifikasi') {
+            $this->umkmModel->update($id, ['status' => 'Terverifikasi']);
+        } else {
+            $this->umkmModel->update($id, ['status' => 'Belum Terverifikasi']);
+        }
+
+        session()->setFlashdata('success', 'UMKM berhasil diverifikasi!');
+
+        return redirect()->to('/umkm/detail/' . $id);
     }
 
     public function ubah($id)

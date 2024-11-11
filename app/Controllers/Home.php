@@ -73,7 +73,7 @@ class Home extends BaseController
 
         session()->setFlashdata('success', 'Registrasi berhasil! Silahkan login.');
 
-        return redirect()->to('/');
+        return redirect()->to('/login');
     }
 
     public function login()
@@ -95,6 +95,12 @@ class Home extends BaseController
                     'role' => $user['role'],
                     'logged_in' => true
                 ];
+
+                if($user['role'] == "pelaku_umkm"){
+                    $umkm = $this->umkmModel->where('id_pengguna', $user['id_pengguna'])->first();
+                    $ses_data['id_umkm'] = $umkm['id_umkm'];
+                }
+
                 $session->set($ses_data);
                 
                 return redirect()->to('/dashboard');
