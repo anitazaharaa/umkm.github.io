@@ -26,7 +26,6 @@ class Profile extends BaseController
         $data = [
             'nama_pengguna' => $this->request->getPost('nama_pengguna'),
             'username' => $this->request->getPost('username'),
-            'role' => $this->request->getPost('role')
         ];
 
         if ($this->request->getVar('password')) {
@@ -37,7 +36,7 @@ class Profile extends BaseController
 
         $ses_data = [
                     'username' => $this->request->getPost('username'),
-                    'role' => $this->request->getPost('role'),
+                    'role' => $session->get('role'),
                     'logged_in' => TRUE
                 ];
         $session->set($ses_data);

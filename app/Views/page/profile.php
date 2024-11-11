@@ -38,12 +38,9 @@
                     <input type="password" class="form-control" id="password_ulang" name="password_ulang">
                 </div>
                 <div class="form-group">
-                       <label for="role">Role</label>
-                       <select class="form-control" name="role" id="role">
-                            <option value="administrator" <?= $profile['role'] == 'administrator' ? 'selected' : '' ?>>Administrator</option>
-                            <option value="petugas" <?= $profile['role'] == 'petugas' ? 'selected' : '' ?>>Petugas</option>
-                        </select>
-                     </div>
+                    <label for="role">Role</label>
+                    <input type="text" class="form-control" id="role" value="<?= $profile['role'] ?>" disabled>
+                </div>
                 <div class="form-group">
                 <div class="row">
                   <div class="col-md-6">
