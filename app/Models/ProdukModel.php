@@ -55,5 +55,10 @@
                         ->where(['tbl_produk.id_umkm' => $id])
                         ->findAll();
         }
+
+        public function countProdukByUmkm($id)
+        {
+            return $this->where(['id_umkm' => $id])->countAllResults();
+        }
     }
 ?>

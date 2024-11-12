@@ -4,7 +4,21 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
+    
     public function index()
+    {
+        if (session()->get('logged_in')) {
+            return redirect()->to('/dashboard');
+        }
+
+        $data = [
+            'title' => 'SiUMKM'
+        ];
+
+        return view('page/welcome_page', $data);
+    }
+    
+    public function loginPage()
     {
         if (session()->get('logged_in')) {
             return redirect()->to('/dashboard');

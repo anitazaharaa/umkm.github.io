@@ -21,7 +21,7 @@
                         </div>
                         <div class="form-group">
                             <label for="nama_kategori">NIK</label>
-                            <input type="text" class="form-control" value="<?= $umkm['NIK'] ?>" id="NIK" name="NIK" required>
+                            <input type="number" class="form-control" value="<?= $umkm['NIK'] ?>" id="NIK" name="NIK" required>
                         </div>
                         <div class="form-group">
                             <label for="nama_kategori">E-Mail</label>

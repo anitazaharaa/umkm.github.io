@@ -10,6 +10,16 @@
                     <h4>Ubah Pengguna</h4>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2 mt-3 mx-2">
+                <?php if ($validation = session()->getFlashdata('validation')): ?>
+                            <div class="alert alert-warning text-white">
+                                <ul>
+                                    <?php foreach ($validation as $error): ?>
+                                        <li><?= esc($error) ?></li>
+                                    <?php endforeach ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+
                         <div class="container">
                                 <form action="<?= base_url("users/update") ?>" method="post">
                                         <?= csrf_field() ?>

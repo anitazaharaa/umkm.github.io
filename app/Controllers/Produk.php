@@ -10,6 +10,8 @@ class Produk extends BaseController
 
         $id_umkm = session()->get('id_umkm');
 
+        // dd($this->produkModel->getProdukByUmkm($id_umkm));
+
         if (session()->get('role') == 'pelaku_umkm') {
             $produk = $this->produkModel->getProdukByUmkm($id_umkm);
             $status = $this->umkmModel->getUmkmStatus($id_umkm)['status'];
@@ -25,7 +27,7 @@ class Produk extends BaseController
             'role' => session()->get('role'),
             'status' => $status,
             'navtitle' => 'Produk UMKM',
-            'produk' => $this->produkModel->getProdukWithKategori(),
+            'produk' => $produk
         ];
 
         return view('/page/produk', $data);
@@ -37,7 +39,7 @@ class Produk extends BaseController
         $id_umkm = session()->get('id_umkm');
 
         if (session()->get('role') == 'pelaku_umkm') {
-            $produk = $this->produkModel->getProdukByUmkm($id_umkm)['status'];
+            $produk = $this->produkModel->getProdukByUmkm($id_umkm);
         } else {
             $produk = $this->produkModel->getProdukWithKategori();
         }
@@ -46,8 +48,7 @@ class Produk extends BaseController
             'title' => 'Produk UMKM | SiUMKM',
             'navtitle' => 'Produk UMKM',
             'role' => session()->get('role'),
-            'status' => $produk,
-            'produk' => $this->produkModel->searchProduk($keyword),
+            'produk' => $produk,
         ];
 
         return view('/page/produk', $data);

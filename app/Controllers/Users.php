@@ -82,6 +82,16 @@ class Users extends BaseController
 
     public function update()
     {
+        $validation = \Config\Services::validation();
+
+        $validation->setRules([
+            'password_ulang' => 'matches[password]',
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            return redirect()->back()->withInput()->with('validation', $validation->getErrors());
+        }
+
         $data = [
             'id_pengguna' => $this->request->getVar('id_pengguna'),
             'nama_pengguna' => $this->request->getVar('nama_pengguna'),

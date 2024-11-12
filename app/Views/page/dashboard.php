@@ -165,6 +165,7 @@
           </div>
         </div>
         
+      <?php if ($role != "pelaku_umkm") :?>
       <div class="row mt-4">
         <div class="col-lg-12">
           <div class="card">
@@ -199,6 +200,7 @@
           </div>
         </div>
       </div>
+      <?php endif; ?>
 
   <?= $this->endSection() ?>
 

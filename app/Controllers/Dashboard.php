@@ -29,6 +29,7 @@ class Dashboard extends BaseController
             $data['title'] = 'Dashboard Petugas | SiUMKM';
         } else {
             $data['title'] = 'Dashboard | SiUMKM';
+            $data['total_produk'] = $this->produkModel->countProdukByUmkm($session->get('id_umkm'));
         }
 
         $data['umkm'] = [
