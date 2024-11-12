@@ -35,6 +35,7 @@ class Filters extends BaseFilters
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
         'auth'          => \App\Filters\AuthFilter::class,
+        'role'          => \App\Filters\RoleFilter::class,
     ];
 
     /**
@@ -74,6 +75,7 @@ class Filters extends BaseFilters
             // 'csrf',
             // 'invalidchars',
             'auth' => ['except' => ['login', 'register']],
+            'role' => ['except' => ['dashboard', 'produk', 'produk/*', 'profile', 'logout', 'login', 'register']],
         ],
         'after' => [
             // 'honeypot',
