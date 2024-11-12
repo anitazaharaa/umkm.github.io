@@ -12,9 +12,40 @@
               <a href="<?= base_url("laporan/tambah") ?>">
                 <button class="btn btn-success btn-sm my-3">Tambah Laporan Pendapatan UMKM</button>
               </a>
-              <a href="<?= base_url("laporan/cetak") ?>">
-                <button class="btn btn-primary btn-sm my-3">Cetak Laporan Pendapatan UMKM Tahunan</button>
-              </a>
+              <button type="button" class="btn btn-primary btn-sm my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Cetak Laporan Tahunan
+              </button>
+            </div>
+
+            <!-- Button trigger modal -->
+            
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Laporan Pendapatan Tahunan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="<?= base_url("/laporan/generate-laporan") ?>" method="get">
+                      <div class="form-group">
+                        <label for="tahun">Tahun</label>
+                        <select class="form-control" id="tahun" name="tahun" required>
+                          <option value="2023">2023</option>
+                          <option value="2024">2024</option>
+                        </select>
+                        </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-primary">Cetak Laporan</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
 
           <div class="card-body px-0 pt-0 pb-2">

@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\PendapatanModel;
 use App\Models\LaporanModel;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class Laporan extends BaseController
 {
@@ -148,6 +150,53 @@ class Laporan extends BaseController
         $this->pendapatanModel->updateBatch($batchData, 'id_pendapatan');
 
         return redirect()->to('/laporan/detail/' . $idLaporan)->with('success', 'Data laporan berhasil diubah');
+    }
+
+    public function generateLaporanTahunan()
+    {
+        $year = $this->request->getGet('tahun');
+
+        // Instantiate Dompdf with options
+        $options = new Options();
+        $options->set('arial', 'Courier');
+        $dompdf = new Dompdf($options);
+
+        $pendapatan = $this->pendapatanModel->getPendapatanByYear($year);
+
+        $groupedData = [];
+        foreach ($pendapatan as $item) {
+            $nama_kecamatan = $item['nama_kecamatan'];
+            if (!isset($groupedData[$nama_kecamatan])) {
+                $groupedData[$nama_kecamatan] = [
+                    'nama_kecamatan' => $nama_kecamatan,
+                    'jumlah_pendapatan' => []
+                ];
+            }
+            $groupedData[$nama_kecamatan]['jumlah_pendapatan'][] = $item['jumlah_pendapatan'];
+        ;
+        }
+
+        $months = [];
+        foreach ($this->pendapatanModel->getMonthByYear($year) as $item) {
+            $months[] = [
+                'month' => date('F', mktime(0, 0, 0, $item['month'], 10))
+            ];
+        }
+
+        $data = [
+            'year' => $year,
+            'months' => $months,
+            'pendapatan' => $groupedData
+        ];
+
+        $html = view('layout/template_pdf', $data);
+        $dompdf->loadHtml($html);
+
+        $dompdf->setPaper('A4', 'landscape');
+
+        $dompdf->render();
+
+        $dompdf->stream("Laporan Pendapatan UMKM Tahun " . $year . ".pdf", array("Attachment" => 0));
     }
 
 }

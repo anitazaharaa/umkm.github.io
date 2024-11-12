@@ -58,3 +58,4 @@ $routes->get('/laporan/detail/(:any)', 'Laporan::detail/$1');
 $routes->get('/laporan/hapus/(:any)', 'Laporan::hapus/$1');
 $routes->get('/laporan/ubah/(:any)', 'Laporan::ubah/$1');
 $routes->post('/laporan/update', 'Laporan::update');
+$routes->get('/laporan/generate-laporan', 'Laporan::generateLaporanTahunan');

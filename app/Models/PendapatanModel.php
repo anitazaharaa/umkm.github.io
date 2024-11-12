@@ -18,6 +18,20 @@
                 ->orderBy('nama_kecamatan', 'ASC')
                 ->findAll();
         }
+
+        public function getPendapatanByYear($year){
+            return $this
+                ->where('YEAR(periode)', $year)
+                ->findAll();
+        }
+
+        public function getMonthByYear($year){
+            return $this
+                ->select('MONTH(periode) as month')
+                ->where('YEAR(periode)', $year)
+                ->groupBy('MONTH(periode)')
+                ->findAll();
+        }
     }
 
 ?>
