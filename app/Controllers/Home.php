@@ -7,12 +7,19 @@ class Home extends BaseController
     
     public function index()
     {
+        $currentMonth = $this->request->getPost('month') ?? date('m');
+        $currentYear = $this->request->getPost('year') ?? date('Y');
+
         if (session()->get('logged_in')) {
             return redirect()->to('/dashboard');
         }
 
         $data = [
-            'title' => 'SiUMKM'
+            'title' => 'SiUMKM',
+            'total' => $this->umkmModel->countAll(),
+            'verif' => $this->umkmModel->getTotalUmkmByStatus('Terverifikasi'),
+            'nonverif' => $this->umkmModel->getTotalUmkmByStatus('Belum Terverifikasi'),
+            'total_produk' => $this->produkModel->countAll()
         ];
 
         return view('page/welcome_page', $data);
@@ -133,6 +140,6 @@ class Home extends BaseController
     {
         $session = session();
         $session->destroy();
-        return redirect()->to('/');
+        return redirect()->to('/login');
     }
 }
