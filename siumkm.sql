@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2024 at 08:54 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Waktu pembuatan: 13 Nov 2024 pada 15.16
+-- Versi server: 10.4.25-MariaDB
+-- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,16 +24,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_kategori`
+-- Struktur dari tabel `tbl_kategori`
 --
 
 CREATE TABLE `tbl_kategori` (
   `id_kategori` int(11) NOT NULL,
   `nama_kategori` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_kategori`
+-- Dumping data untuk tabel `tbl_kategori`
 --
 
 INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_laporan`
+-- Struktur dari tabel `tbl_laporan`
 --
 
 CREATE TABLE `tbl_laporan` (
@@ -56,12 +56,12 @@ CREATE TABLE `tbl_laporan` (
   `tanggal_laporan` date NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pendapatan`
+-- Struktur dari tabel `tbl_pendapatan`
 --
 
 CREATE TABLE `tbl_pendapatan` (
@@ -70,12 +70,12 @@ CREATE TABLE `tbl_pendapatan` (
   `nama_kecamatan` varchar(128) NOT NULL,
   `jumlah_pendapatan` int(11) NOT NULL,
   `periode` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pengguna`
+-- Struktur dari tabel `tbl_pengguna`
 --
 
 CREATE TABLE `tbl_pengguna` (
@@ -86,20 +86,19 @@ CREATE TABLE `tbl_pengguna` (
   `role` enum('administrator','petugas','pelaku_umkm') NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_pengguna`
+-- Dumping data untuk tabel `tbl_pengguna`
 --
 
 INSERT INTO `tbl_pengguna` (`id_pengguna`, `nama_pengguna`, `username`, `password`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin', '$2y$10$OXqkc2Pj0BAhPaervx9zuOXEguFtwX1V8dSOIARRhHFedmQLxirCW', 'administrator', '0000-00-00', '2024-11-12'),
-(2, 'petugas', 'petugas', '$2y$10$Jiq8DX22OXP1a8aEIRJ/yOKF7VfgeOKlJC6D9JRxoqPoUZPEgYP.q', 'petugas', '2024-11-11', '2024-11-12');
+(1, 'admin', 'admin', '$2y$10$OXqkc2Pj0BAhPaervx9zuOXEguFtwX1V8dSOIARRhHFedmQLxirCW', 'administrator', '0000-00-00', '2024-11-12');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_produk`
+-- Struktur dari tabel `tbl_produk`
 --
 
 CREATE TABLE `tbl_produk` (
@@ -111,12 +110,12 @@ CREATE TABLE `tbl_produk` (
   `foto_produk` varchar(256) NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_umkm`
+-- Struktur dari tabel `tbl_umkm`
 --
 
 CREATE TABLE `tbl_umkm` (
@@ -125,44 +124,48 @@ CREATE TABLE `tbl_umkm` (
   `NIK` varchar(128) NOT NULL,
   `email` varchar(128) NOT NULL,
   `no_hp` varchar(14) NOT NULL,
+  `nama_umkm` varchar(128) NOT NULL,
   `alamat_umkm` varchar(256) NOT NULL,
   `id_pengguna` int(11) NOT NULL,
   `status` enum('Terverifikasi','Belum Terverifikasi') NOT NULL,
+  `facebook` varchar(128) DEFAULT NULL,
+  `instagram` varchar(128) DEFAULT NULL,
+  `youtube` varchar(128) DEFAULT NULL,
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tbl_kategori`
+-- Indeks untuk tabel `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indexes for table `tbl_laporan`
+-- Indeks untuk tabel `tbl_laporan`
 --
 ALTER TABLE `tbl_laporan`
   ADD PRIMARY KEY (`id_laporan`);
 
 --
--- Indexes for table `tbl_pendapatan`
+-- Indeks untuk tabel `tbl_pendapatan`
 --
 ALTER TABLE `tbl_pendapatan`
   ADD PRIMARY KEY (`id_pendapatan`),
   ADD KEY `id_laporan` (`id_laporan`);
 
 --
--- Indexes for table `tbl_pengguna`
+-- Indeks untuk tabel `tbl_pengguna`
 --
 ALTER TABLE `tbl_pengguna`
   ADD PRIMARY KEY (`id_pengguna`);
 
 --
--- Indexes for table `tbl_produk`
+-- Indeks untuk tabel `tbl_produk`
 --
 ALTER TABLE `tbl_produk`
   ADD PRIMARY KEY (`id_produk`),
@@ -170,45 +173,45 @@ ALTER TABLE `tbl_produk`
   ADD KEY `id_kategori` (`id_kategori`);
 
 --
--- Indexes for table `tbl_umkm`
+-- Indeks untuk tabel `tbl_umkm`
 --
 ALTER TABLE `tbl_umkm`
   ADD PRIMARY KEY (`id_umkm`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tbl_kategori`
+-- AUTO_INCREMENT untuk tabel `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `tbl_pendapatan`
+-- AUTO_INCREMENT untuk tabel `tbl_pendapatan`
 --
 ALTER TABLE `tbl_pendapatan`
   MODIFY `id_pendapatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=235;
 
 --
--- AUTO_INCREMENT for table `tbl_produk`
+-- AUTO_INCREMENT untuk tabel `tbl_produk`
 --
 ALTER TABLE `tbl_produk`
   MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tbl_umkm`
+-- AUTO_INCREMENT untuk tabel `tbl_umkm`
 --
 ALTER TABLE `tbl_umkm`
-  MODIFY `id_umkm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_umkm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `tbl_produk`
+-- Ketidakleluasaan untuk tabel `tbl_produk`
 --
 ALTER TABLE `tbl_produk`
   ADD CONSTRAINT `tbl_produk_ibfk_1` FOREIGN KEY (`id_umkm`) REFERENCES `tbl_umkm` (`id_umkm`) ON DELETE CASCADE ON UPDATE CASCADE,

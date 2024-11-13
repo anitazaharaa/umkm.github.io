@@ -9,7 +9,7 @@
         protected $table = 'tbl_umkm';
         protected $primaryKey = 'id_umkm';
         protected $useTimestamps = true;
-        protected $allowedFields = ['nama_pemilik', 'NIK', 'email','no_hp','id_kategori','alamat_umkm', 'id_pengguna', 'status', 'username'];
+        protected $allowedFields = ['nama_pemilik', 'NIK', 'email','no_hp','id_kategori', 'nama_umkm', 'alamat_umkm', 'facebook', 'instagram', 'youtube', 'id_pengguna', 'status', 'username'];
 
         public function getTotalUmkmByStatus($status)
         {

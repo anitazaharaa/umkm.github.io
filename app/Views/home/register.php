@@ -32,6 +32,7 @@
                         <?php endif; ?>
                         <form role="form" action="<?= base_url('/register') ?>" method="POST">
                             <?= csrf_field() ?>
+                            <h5>Identitas Pemilik UMKM</h5>
                             <div class="mb-3">
                                 <input type="text" class="form-control" name="nama_pemilik" placeholder="Nama Pemilik" aria-label="nama_pemilik" value="<?= old('nama_pemilik') ?>" required autofocus>
                             </div>
@@ -43,6 +44,20 @@
                             </div>
                             <div class="mb-3">
                                 <input type="number" class="form-control" name="no_hp" placeholder="No HP Aktif" aria-label="no_hp" value="<?= old('no_hp') ?>" required>
+                            </div>
+                            <hr>
+                            <h5>Identitas UMKM</h5>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="nama_umkm" placeholder="Nama UMKM" aria-label="nama_umkm" value="<?= old('nama_umkm') ?>" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="facebook" placeholder="Facebook (isi jika ada)" aria-label="facebook" value="<?= old('facebook') ?>">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="instagram" placeholder="Instagram (isi jika ada)" aria-label="instagram" value="<?= old('instagram') ?>">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="youtube" placeholder="Youtube (isi jika ada)" aria-label="youtube" value="<?= old('youtube') ?>">
                             </div>
                             <div class="mb-3">
                                 <textarea class="form-control" name="alamat_umkm" placeholder="Alamat UMKM" aria-label="Alamat UMKM" required><?= old('alamat_umkm') ?></textarea>
