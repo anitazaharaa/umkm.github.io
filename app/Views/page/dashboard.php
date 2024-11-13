@@ -3,7 +3,7 @@
   <?= $this->section('content') ?>
 
 <div class="container-fluid py-4">
-      <?php if($role == 'administrator' || $role == 'petugas'): ?>
+      <?php if($role == 'administrator'): ?>
         <div class="row">
           <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
             <div class="card">

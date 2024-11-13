@@ -46,7 +46,7 @@
                                                 <select class="form-control" name="role" id="role">
                                                         <option value="">---Pilih Role---</option>
                                                         <option value="administrator" <?= $pengguna['role'] == 'administrator' ? 'selected' : '' ?>>Administrator</option>
-                                                        <option value="petugas" <?= $pengguna['role'] == 'petugas' ? 'selected' : '' ?>>Petugas</option>
+                                                        <option value="pelaku_umkm" <?= $pengguna['role'] == 'pelaku_umkm' ? 'selected' : '' ?>>Pelaku Umkm</option>
                                                 </select>
                                         </div>
                                         <div class="form-group text-end">

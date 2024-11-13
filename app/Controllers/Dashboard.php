@@ -25,8 +25,6 @@ class Dashboard extends BaseController
 
         if ($session->get('role') == 'administrator') {
             $data['title'] = 'Dashboard Admin | SiUMKM';
-        } else if ($session->get('role') == 'petugas') {
-            $data['title'] = 'Dashboard Petugas | SiUMKM';
         } else {
             $data['title'] = 'Dashboard | SiUMKM';
             $data['total_produk'] = $this->produkModel->countProdukByUmkm($session->get('id_umkm'));

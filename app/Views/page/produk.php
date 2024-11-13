@@ -19,7 +19,7 @@
               <?php endif; ?>
             <div class="card-body px-0 pt-0 pb-2">
               
-              <?php if ($role == "administrator"  || $role == "petugas"): ?>
+              <?php if ($role == "administrator"): ?>
                 <div class="d-flex justify-content-end" ?>
                   <form method="get" action="<?= base_url("/produk/cari") ?>" class="d-flex mt-2 text-end">
                       <input type="text" class="form-control me-2" placeholder="Cari Produk" name="keyword" style="height: 38px;">

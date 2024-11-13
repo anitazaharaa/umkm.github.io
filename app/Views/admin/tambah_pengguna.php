@@ -41,11 +41,7 @@
                         </div>
                         <div class="form-group">
                             <label for="role">Role</label>
-                            <select class="form-control" name="role" id="role">
-                                <option value="">---Pilih Role---</option>
-                                <option value="administrator">Administrator</option>
-                                <option value="petugas">Petugas</option>
-                            </select>
+                            <input type="text" class="form-control" id="role" name="role" value="administrator" readonly required>
                         </div>
                         <div class="form-group text-end">
                             <button type="submit" class="btn btn-sm btn-success">Simpan</button>

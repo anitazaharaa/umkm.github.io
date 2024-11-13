@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Nov 2024 pada 18.42
--- Versi server: 10.4.25-MariaDB
--- Versi PHP: 8.1.10
+-- Generation Time: Nov 12, 2024 at 08:54 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,16 +24,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_kategori`
+-- Table structure for table `tbl_kategori`
 --
 
 CREATE TABLE `tbl_kategori` (
   `id_kategori` int(11) NOT NULL,
   `nama_kategori` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tbl_kategori`
+-- Dumping data for table `tbl_kategori`
 --
 
 INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_laporan`
+-- Table structure for table `tbl_laporan`
 --
 
 CREATE TABLE `tbl_laporan` (
@@ -56,20 +56,12 @@ CREATE TABLE `tbl_laporan` (
   `tanggal_laporan` date NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `tbl_laporan`
---
-
-INSERT INTO `tbl_laporan` (`id_laporan`, `nama_laporan`, `tanggal_laporan`, `created_at`, `updated_at`) VALUES
-('LAP-001', 'Laporan Pendapatan UMKM Bulan November', '2024-11-08', '2024-11-08', '2024-11-08'),
-('LAP-002', 'Laporan Pendapatan UMKM Bulan October', '2024-10-08', '2024-11-08', '2024-11-08');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_pendapatan`
+-- Table structure for table `tbl_pendapatan`
 --
 
 CREATE TABLE `tbl_pendapatan` (
@@ -78,96 +70,12 @@ CREATE TABLE `tbl_pendapatan` (
   `nama_kecamatan` varchar(128) NOT NULL,
   `jumlah_pendapatan` int(11) NOT NULL,
   `periode` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `tbl_pendapatan`
---
-
-INSERT INTO `tbl_pendapatan` (`id_pendapatan`, `id_laporan`, `nama_kecamatan`, `jumlah_pendapatan`, `periode`) VALUES
-(391, 'LAP-001', 'Bantarkalong', 600000, '2024-11-08'),
-(392, 'LAP-001', 'Bojongasih', 110000, '2024-11-08'),
-(393, 'LAP-001', 'Bojonggambir', 160000, '2024-11-08'),
-(394, 'LAP-001', 'Ciawi', 210000, '2024-11-08'),
-(395, 'LAP-001', 'Cibalong', 260000, '2024-11-08'),
-(396, 'LAP-001', 'Cigalontang', 310000, '2024-11-08'),
-(397, 'LAP-001', 'Cikalong', 360000, '2024-11-08'),
-(398, 'LAP-001', 'Cikatomas', 410000, '2024-11-08'),
-(399, 'LAP-001', 'Cineam', 460000, '2024-11-08'),
-(400, 'LAP-001', 'Cipatujah', 510000, '2024-11-08'),
-(401, 'LAP-001', 'Cisayong', 560000, '2024-11-08'),
-(402, 'LAP-001', 'Culamega', 610000, '2024-11-08'),
-(403, 'LAP-001', 'Gunungtanjung', 660000, '2024-11-08'),
-(404, 'LAP-001', 'Jamanis', 710000, '2024-11-08'),
-(405, 'LAP-001', 'Jatiwaras', 760000, '2024-11-08'),
-(406, 'LAP-001', 'Kadipaten', 810000, '2024-11-08'),
-(407, 'LAP-001', 'Karangjaya', 860000, '2024-11-08'),
-(408, 'LAP-001', 'Karangnunggal', 910000, '2024-11-08'),
-(409, 'LAP-001', 'Leuwisari', 960000, '2024-11-08'),
-(410, 'LAP-001', 'Mangunreja', 1010000, '2024-11-08'),
-(411, 'LAP-001', 'Manonjaya', 1060000, '2024-11-08'),
-(412, 'LAP-001', 'Padakembang', 1110000, '2024-11-08'),
-(413, 'LAP-001', 'Pagerageung', 1160000, '2024-11-08'),
-(414, 'LAP-001', 'Pancatengah', 1210000, '2024-11-08'),
-(415, 'LAP-001', 'Parungponteng', 1260000, '2024-11-08'),
-(416, 'LAP-001', 'Puspahiang', 1310000, '2024-11-08'),
-(417, 'LAP-001', 'Rajapolah', 1360000, '2024-11-08'),
-(418, 'LAP-001', 'Salawu', 1410000, '2024-11-08'),
-(419, 'LAP-001', 'Salopa', 1460000, '2024-11-08'),
-(420, 'LAP-001', 'Sariwangi', 1510000, '2024-11-08'),
-(421, 'LAP-001', 'Singaparna', 1560000, '2024-11-08'),
-(422, 'LAP-001', 'Sodonghilir', 1610000, '2024-11-08'),
-(423, 'LAP-001', 'Sukahening', 1660000, '2024-11-08'),
-(424, 'LAP-001', 'Sukaraja', 1710000, '2024-11-08'),
-(425, 'LAP-001', 'Sukarame', 1760000, '2024-11-08'),
-(426, 'LAP-001', 'Sukaratu', 1810000, '2024-11-08'),
-(427, 'LAP-001', 'Sukaresik', 1860000, '2024-11-08'),
-(428, 'LAP-001', 'Tanjungjaya', 1910000, '2024-11-08'),
-(429, 'LAP-001', 'Taraju', 1960000, '2024-11-08'),
-(430, 'LAP-002', 'Bantarkalong', 1000, '2024-10-08'),
-(431, 'LAP-002', 'Bojongasih', 110000, '2024-10-08'),
-(432, 'LAP-002', 'Bojonggambir', 160000, '2024-10-08'),
-(433, 'LAP-002', 'Ciawi', 210000, '2024-10-08'),
-(434, 'LAP-002', 'Cibalong', 260000, '2024-10-08'),
-(435, 'LAP-002', 'Cigalontang', 310000, '2024-10-08'),
-(436, 'LAP-002', 'Cikalong', 360000, '2024-10-08'),
-(437, 'LAP-002', 'Cikatomas', 410000, '2024-10-08'),
-(438, 'LAP-002', 'Cineam', 460000, '2024-10-08'),
-(439, 'LAP-002', 'Cipatujah', 510000, '2024-10-08'),
-(440, 'LAP-002', 'Cisayong', 560000, '2024-10-08'),
-(441, 'LAP-002', 'Culamega', 610000, '2024-10-08'),
-(442, 'LAP-002', 'Gunungtanjung', 660000, '2024-10-08'),
-(443, 'LAP-002', 'Jamanis', 710000, '2024-10-08'),
-(444, 'LAP-002', 'Jatiwaras', 760000, '2024-10-08'),
-(445, 'LAP-002', 'Kadipaten', 810000, '2024-10-08'),
-(446, 'LAP-002', 'Karangjaya', 860000, '2024-10-08'),
-(447, 'LAP-002', 'Karangnunggal', 910000, '2024-10-08'),
-(448, 'LAP-002', 'Leuwisari', 960000, '2024-10-08'),
-(449, 'LAP-002', 'Mangunreja', 1010000, '2024-10-08'),
-(450, 'LAP-002', 'Manonjaya', 1060000, '2024-10-08'),
-(451, 'LAP-002', 'Padakembang', 1110000, '2024-10-08'),
-(452, 'LAP-002', 'Pagerageung', 1160000, '2024-10-08'),
-(453, 'LAP-002', 'Pancatengah', 1210000, '2024-10-08'),
-(454, 'LAP-002', 'Parungponteng', 1260000, '2024-10-08'),
-(455, 'LAP-002', 'Puspahiang', 1310000, '2024-10-08'),
-(456, 'LAP-002', 'Rajapolah', 1360000, '2024-10-08'),
-(457, 'LAP-002', 'Salawu', 1410000, '2024-10-08'),
-(458, 'LAP-002', 'Salopa', 1460000, '2024-10-08'),
-(459, 'LAP-002', 'Sariwangi', 1510000, '2024-10-08'),
-(460, 'LAP-002', 'Singaparna', 1000, '2024-10-08'),
-(461, 'LAP-002', 'Sodonghilir', 1610000, '2024-10-08'),
-(462, 'LAP-002', 'Sukahening', 1660000, '2024-10-08'),
-(463, 'LAP-002', 'Sukaraja', 1710000, '2024-10-08'),
-(464, 'LAP-002', 'Sukarame', 1760000, '2024-10-08'),
-(465, 'LAP-002', 'Sukaratu', 1810000, '2024-10-08'),
-(466, 'LAP-002', 'Sukaresik', 1860000, '2024-10-08'),
-(467, 'LAP-002', 'Tanjungjaya', 1910000, '2024-10-08'),
-(468, 'LAP-002', 'Taraju', 1000, '2024-10-08');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_pengguna`
+-- Table structure for table `tbl_pengguna`
 --
 
 CREATE TABLE `tbl_pengguna` (
@@ -178,21 +86,20 @@ CREATE TABLE `tbl_pengguna` (
   `role` enum('administrator','petugas','pelaku_umkm') NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tbl_pengguna`
+-- Dumping data for table `tbl_pengguna`
 --
 
 INSERT INTO `tbl_pengguna` (`id_pengguna`, `nama_pengguna`, `username`, `password`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin', '$2y$10$6HS9SKPUw04DTBYKaFwVx.dymmtATvI3eWJbGvbDltoMEqVIdKEHC', 'administrator', '2024-11-09', '2024-11-09'),
-(2, 'Petugas A', 'petugas', '$2y$10$smRBxbBacdrSSrtF6v.nzOG3igUT9YpxZ0u2p7FN7WsbLTaertABe', 'petugas', '2024-11-10', '2024-11-10'),
-(3, 'Fyooo', 'fyoooo', '$2y$10$AmZK4904uSIHBynEk8kjvOvfmCzOxa.bhSCQAdH8wzQl4vLJrI09O', 'pelaku_umkm', '2024-11-10', '2024-11-10');
+(1, 'admin', 'admin', '$2y$10$OXqkc2Pj0BAhPaervx9zuOXEguFtwX1V8dSOIARRhHFedmQLxirCW', 'administrator', '0000-00-00', '2024-11-12'),
+(2, 'petugas', 'petugas', '$2y$10$Jiq8DX22OXP1a8aEIRJ/yOKF7VfgeOKlJC6D9JRxoqPoUZPEgYP.q', 'petugas', '2024-11-11', '2024-11-12');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_produk`
+-- Table structure for table `tbl_produk`
 --
 
 CREATE TABLE `tbl_produk` (
@@ -204,12 +111,12 @@ CREATE TABLE `tbl_produk` (
   `foto_produk` varchar(256) NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_umkm`
+-- Table structure for table `tbl_umkm`
 --
 
 CREATE TABLE `tbl_umkm` (
@@ -223,46 +130,39 @@ CREATE TABLE `tbl_umkm` (
   `status` enum('Terverifikasi','Belum Terverifikasi') NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `tbl_umkm`
---
-
-INSERT INTO `tbl_umkm` (`id_umkm`, `nama_pemilik`, `NIK`, `email`, `no_hp`, `alamat_umkm`, `id_pengguna`, `status`, `created_at`, `updated_at`) VALUES
-(17, 'Fyooo', '3141341113310001', 'fyo@gmail.com', '08123456789', 'Jl. Maju Mundur Jaya jayaa eyyy No. 31, Kel. Jambu, Kec. Mangga, Kab.  Semangka', 3, 'Terverifikasi', '2024-11-10', '2024-11-10');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `tbl_kategori`
+-- Indexes for table `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `tbl_laporan`
+-- Indexes for table `tbl_laporan`
 --
 ALTER TABLE `tbl_laporan`
   ADD PRIMARY KEY (`id_laporan`);
 
 --
--- Indeks untuk tabel `tbl_pendapatan`
+-- Indexes for table `tbl_pendapatan`
 --
 ALTER TABLE `tbl_pendapatan`
   ADD PRIMARY KEY (`id_pendapatan`),
   ADD KEY `id_laporan` (`id_laporan`);
 
 --
--- Indeks untuk tabel `tbl_pengguna`
+-- Indexes for table `tbl_pengguna`
 --
 ALTER TABLE `tbl_pengguna`
   ADD PRIMARY KEY (`id_pengguna`);
 
 --
--- Indeks untuk tabel `tbl_produk`
+-- Indexes for table `tbl_produk`
 --
 ALTER TABLE `tbl_produk`
   ADD PRIMARY KEY (`id_produk`),
@@ -270,45 +170,45 @@ ALTER TABLE `tbl_produk`
   ADD KEY `id_kategori` (`id_kategori`);
 
 --
--- Indeks untuk tabel `tbl_umkm`
+-- Indexes for table `tbl_umkm`
 --
 ALTER TABLE `tbl_umkm`
   ADD PRIMARY KEY (`id_umkm`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_kategori`
+-- AUTO_INCREMENT for table `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_pendapatan`
+-- AUTO_INCREMENT for table `tbl_pendapatan`
 --
 ALTER TABLE `tbl_pendapatan`
-  MODIFY `id_pendapatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=508;
+  MODIFY `id_pendapatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=235;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_produk`
+-- AUTO_INCREMENT for table `tbl_produk`
 --
 ALTER TABLE `tbl_produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_umkm`
+-- AUTO_INCREMENT for table `tbl_umkm`
 --
 ALTER TABLE `tbl_umkm`
-  MODIFY `id_umkm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_umkm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `tbl_produk`
+-- Constraints for table `tbl_produk`
 --
 ALTER TABLE `tbl_produk`
   ADD CONSTRAINT `tbl_produk_ibfk_1` FOREIGN KEY (`id_umkm`) REFERENCES `tbl_umkm` (`id_umkm`) ON DELETE CASCADE ON UPDATE CASCADE,
