@@ -20,7 +20,52 @@
                   <input type="text" class="form-control me-2" placeholder="Cari UMKM" name="keyword" style="height: 38px;">
                   <button class="btn btn-sm btn-info px-5" type="submit" style="margin-bottom: 0px; height: 38px;">Cari</button>
                 </form>
+                <button type="button" class="btn btn-secondary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-bottom: 0px; height: 38px;">
+                Filter UMKM
+                </button>
               </div>
+
+              <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Filter Data UMKM</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="<?= base_url("/umkm/filter") ?>" method="get">
+                      <div class="form-group">
+                        <label for="pendapatan">Pendapatan</label>
+                        <select class="form-control" id="pendapatan" name="pendapatan">
+                          <option value="">----Pilih Pendapatan----</option>
+                          <option value="DESC">Pendapatan Tertinggi</option>
+                          <option value="ASC">Pendapatan Terendah</option>
+                        </select>
+                       </div>
+
+                       <div class="form-group">
+                        <label for="sosial_media">Ketersedian Sosial Media</label>
+                        <select class="form-control" id="sosial_media" name="sosial_media">
+                          <option value="">----Pilih Ketersedian Sosial Media----</option>
+                          <option value=true>UMKM Memiliki Sosial Media</option>
+                          <option value=false>UMKM Tidak Memiliki Sosial Media</option>
+                        </select>
+                        </div>
+                      </div>
+                      
+                    
+                
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-primary">Kirim</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+              
 
             </div>
               <div class="table-responsive p-0">
@@ -31,6 +76,7 @@
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Nama Pemilik</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Email</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">No HP</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Jumlah Pendapatan</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Status</th>
                       <th class="text-secondary"></th>
                     </tr>
@@ -64,6 +110,13 @@
                                     <div class="d-flex px-2 py-1">
                                         <div class="d-flex flex-column justify-content-center">
                                             <h4 class="mb-0 text-sm"><?= $item['no_hp'] ?></h4>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex px-2 py-1">
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h4 class="mb-0 text-sm">Rp. <?= $item['total_pendapatan'] ?></h4>
                                         </div>
                                     </div>
                                 </td>

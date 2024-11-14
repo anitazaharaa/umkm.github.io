@@ -15,25 +15,31 @@
                     <form action="<?= base_url('umkm/update') ?>" method="post">
                         <?= csrf_field() ?>
                         <input type="hidden" name="id_umkm" value="<?= $umkm['id_umkm'] ?>">
+                        <h5 class="mt-4 mb-2">Identitas Pemilik</h5>
                         <div class="form-group">
-                            <label for="nama_kategori">Nama Pemilik</label>
-                            <input type="text" class="form-control" value="<?= $umkm['nama_pemilik'] ?>" id="nama_pemilik" name="nama_pemilik" required>
+                            <label for="nama_pemilik">Nama Pemilik</label>
+                            <input type="text" class="form-control" value="<?= $umkm['nama_pemilik'] ?>" id="nama_pemilik" name="nama_pemilik" required >
                         </div>
                         <div class="form-group">
-                            <label for="nama_kategori">NIK</label>
-                            <input type="number" class="form-control" value="<?= $umkm['NIK'] ?>" id="NIK" name="NIK" required>
+                            <label for="nik">NIK</label>
+                            <input type="text" class="form-control" value="<?= $umkm['NIK'] ?>" id="nik" name="NIK" required>
                         </div>
                         <div class="form-group">
-                            <label for="nama_kategori">E-Mail</label>
-                            <input type="text" class="form-control" value="<?= $umkm['email'] ?>" id="email" name="email" required>
+                            <label for="email">E-Mail</label>
+                            <input type="email" class="form-control" value="<?= $umkm['email'] ?>" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="nama_kategori">No HP</label>
+                            <label for="no_hp">No HP</label>
                             <input type="text" class="form-control" value="<?= $umkm['no_hp'] ?>" id="no_hp" name="no_hp" required>
                         </div>
                         <div class="form-group">
-                            <label for="nama_kategori">Alamat</label>
+                            <label for="alamat_umkm">Alamat</label>
                             <textarea class="form-control" id="alamat_umkm" name="alamat_umkm" required><?= $umkm['alamat_umkm'] ?></textarea>  
+                        </div>
+                        <h5 class="mt-4 mb-2">Identitas UMKM</h5>
+                        <div class="form-group">
+                            <label for="nama_umkm">Nama UMKM</label>
+                            <input type="text" class="form-control" value="<?= $umkm['nama_umkm'] ?>" name="nama_umkm" required>
                         </div>
                         <div class="form-group">
                             <label for="status">Status</label>
@@ -42,6 +48,28 @@
                                 <option value="Belum Terverifikasi" <?= $umkm['status'] == 'Belum Terverifikasi' ? 'selected' : '' ?>>Belum Terverifikasi</option>
                             </select>
                         </div>
+                        <h5 class="mt-4 mb-2">Sosial Media</h5>
+                        <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label for="example-text-input" class="form-control-label">Facebook</label>
+                              <input class="form-control" type="text" name="facebook" value="<?= $umkm['facebook'] ?>" required>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label for="example-text-input" class="form-control-label">Instagram</label>
+                              <input class="form-control" type="text" name="instagram" value="<?= $umkm['instagram'] ?>" required>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label for="example-text-input" class="form-control-label">Youtube</label>
+                              <input class="form-control" type="text" name="youtube" value="<?= $umkm['youtube'] ?>" required>
+                            </div>
+                          </div>
+                        
                         <div class="form-group text-end">
                             <button type="submit" class="btn btn-sm btn-primary">Simpan</button>
                             

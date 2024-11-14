@@ -2,16 +2,18 @@
 
 namespace App\Controllers;
 
+use App\Models\PendapatanUmkmModel;
 
 class Umkm extends BaseController
 {
     public function index()
     {
+
         $data = [
             'title' => 'Data UMKM | SiUMKM',
             'role' => session()->get('role'),
             'navtitle' => 'Data UMKM',
-            'umkm' => $this->umkmModel->findAll()
+            'umkm' => $this->umkmModel->getUmkmWithPendapatan()
         ];
 
         return view('/page/umkm', $data);
@@ -35,14 +37,43 @@ class Umkm extends BaseController
         return view('/page/umkm', $data);
     }
 
+    public function filter(){
+
+        $pendapatan = $this->request->getVar('pendapatan');
+        $sosial_media = $this->request->getVar('sosial_media');
+
+        if($this->request->getVar('pendapatan') != '' && $sosial_media != ''){
+            $filter = $this->umkmModel->getUmkmWithPendapatanWithFilter($pendapatan, $sosial_media);
+        } else if ($this->request->getVar('pendapatan') != ''){
+            $filter = $this->umkmModel->getUmkmWithPendapatanWithFilter($pendapatan);
+        } else if ($sosial_media != ''){
+            $filter = $this->umkmModel->getUmkmWithPendapatanWithFilter('', $sosial_media);
+        } else {
+            $filter = $this->umkmModel->getUmkmWithPendapatan();
+        }   
+
+        $data = [
+            'title' => 'Data UMKM | SiUMKM',
+            'role' => session()->get('role'),
+            'navtitle' => 'Data UMKM',
+            'umkm' => $filter
+        ];
+
+        return view('/page/umkm', $data);
+    }
+
 
     public function detail($id)
     {
+    
+        $pendapatanumkmModel = new PendapatanUmkmModel();
+
         $data = [
             'title' => 'Detail UMKM | SiUMKM',
             'role' => session()->get('role'),
             'navtitle' => 'Data UMKM',
-            'umkm' => $this->umkmModel->find($id)
+            'umkm' => $this->umkmModel->find($id),
+            'pendapatanumkm' => $pendapatanumkmModel->where('id_umkm', $id)->findAll()
         ];
 
         return view('/page/detail_umkm', $data);
@@ -83,6 +114,9 @@ class Umkm extends BaseController
             'NIK' => $this->request->getVar('NIK'),
             'email' => $this->request->getVar('email'),
             'no_hp' => $this->request->getVar('no_hp'),
+            'facebook' => ($this->request->getVar('facebook') == '') ? null : $this->request->getVar('facebook'),
+            'instagram' => ($this->request->getVar('instagram') == '') ? null : $this->request->getVar('instagram'),
+            'youtube' => ($this->request->getVar('youtube') == '') ? null : $this->request->getVar('youtube'),
             'alamat_umkm' => $this->request->getVar('alamat_umkm'),
             'status' => $this->request->getVar('status')
         ];
@@ -96,10 +130,13 @@ class Umkm extends BaseController
 
     public function hapus($id_umkm, $id_pengguna)
     {
+        $pendapatanumkmModel = new PendapatanUmkmModel();
 
         $this->umkmModel->delete($id_umkm);
 
         $this->PenggunaModel->delete($id_pengguna);
+
+        $pendapatanumkmModel->where('id_umkm', $id_umkm)->delete();
 
         session()->setFlashdata('success', 'Data berhasil dihapus!');
 

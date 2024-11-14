@@ -27,6 +27,7 @@ $routes->post('/kategori/update', 'Kategori::update');
 
 $routes->get('/umkm', 'Umkm::index');
 $routes->get('/umkm/cari', 'Umkm::cari');
+$routes->get('/umkm/filter', 'Umkm::filter');
 $routes->get('/umkm/detail/(:num)', 'Umkm::detail/$1');
 $routes->get('/umkm/verifikasi/(:num)', 'Umkm::verifikasi/$1');
 $routes->get('/umkm/ubah/(:num)', 'Umkm::ubah/$1');
