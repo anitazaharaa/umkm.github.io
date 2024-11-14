@@ -19,13 +19,12 @@
                 </div>
               <?php endif; ?>
 
-              <?php if ($lastmonth != date('m')): ?>
+              <?php if ($lastmonth != date('m') || $lastmonth == ""): ?>  
                 <div class="alert alert-danger text-white text-center">
                   Pendapatan Bulan ini belum dilaporkan
                 </div>
               <?php endif; ?>
               
-
             <?php if ($status == "Terverifikasi"): ?>
             <div class="d-flex justify-content-start">
               <a href="<?= base_url("pendapatan-umkm/tambah") ?>">

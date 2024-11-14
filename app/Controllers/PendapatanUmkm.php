@@ -21,7 +21,7 @@ class PendapatanUmkm extends BaseController
             'role' => $role,
             'navtitle' => 'Pendapatan UMKM',
             'status' => $this->umkmModel->getUmkmStatus($id_umkm)['status'],
-            'lastmonth' => $this->pendapatanumkmModel->getMonthMax($id_umkm) ?? '',
+            'lastmonth' => $this->pendapatanumkmModel->getMonthMax($id_umkm)['month'] ?? '',
             'pendapatanumkm' => $this->pendapatanumkmModel->pendapatanFindByUmkm($id_umkm),
         ];
 
