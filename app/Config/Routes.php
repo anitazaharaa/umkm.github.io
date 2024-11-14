@@ -59,3 +59,10 @@ $routes->get('/laporan/hapus/(:any)', 'Laporan::hapus/$1');
 $routes->get('/laporan/ubah/(:any)', 'Laporan::ubah/$1');
 $routes->post('/laporan/update', 'Laporan::update');
 $routes->get('/laporan/generate-laporan', 'Laporan::generateLaporanTahunan');
+
+$routes->get('/pendapatan-umkm', 'PendapatanUmkm::index');
+$routes->get('/pendapatan-umkm/tambah', 'PendapatanUmkm::tambah');
+$routes->post('/pendapatan-umkm/simpan', 'PendapatanUmkm::simpan');
+$routes->get('/pendapatan-umkm/ubah/(:num)', 'PendapatanUmkm::ubah/$1');
+$routes->post('/pendapatan-umkm/update', 'PendapatanUmkm::update');
+$routes->get('/pendapatan-umkm/hapus/(:num)', 'PendapatanUmkm::hapus/$1');

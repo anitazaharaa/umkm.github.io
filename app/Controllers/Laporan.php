@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Models\PendapatanModel;
-use App\Models\LaporanModel;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
@@ -37,7 +35,6 @@ class Laporan extends BaseController
     public function simpan()
     {
         
-
         $tanggalLaporan = $this->request->getPost('tanggal_laporan');
         $month = date('F', strtotime($tanggalLaporan));
 

@@ -75,7 +75,7 @@ class Filters extends BaseFilters
             // 'csrf',
             // 'invalidchars',
             'auth' => ['except' => ['/','login', 'register']],
-            'role' => ['except' => ['/','dashboard', 'produk', 'produk/*', 'profile', 'logout', 'login', 'register']],
+            'role' => ['except' => ['/','dashboard', 'produk', 'produk/*', 'profile', 'logout', 'login', 'register', '/pendapatan-umkm', '/pendapatan-umkm/*']],
         ],
         'after' => [
             // 'honeypot',
